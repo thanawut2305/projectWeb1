@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<script src = "app.js"></script>
 	</head>
 	<body class="is-preload">
 
@@ -21,41 +22,100 @@
 						<div class="inner">
 
 							<!-- Header -->
-								<header id="header">
-									<p>ยินดีต้อนรับ คุณ admin</p>
-									<!-- <a href="index.html" class="logo2">logout2</a> -->
-									<!-- <a href="index.html" class="logo">logout</a> -->
-									
-									<!-- <strong>ยินดีต้อนรับ</strong> -->
-									<ul class="icons">
-										<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
-										<li><a href="profile.html" class="logo">แก้ไขข้อมูลส่วนตัว</a></li>
-										<li><a href="index.html" class="logo">logout</a></li>
-									</ul>
-									<!-- <i class="fa fa-user-circle" aria-hidden="true"></i> -->
-								</header>
+							<header id="header">
+								<p>ยินดีต้อนรับ คุณ admin</p>
+								<!-- <a href="index.html" class="logo2">logout2</a> -->
+								<!-- <a href="index.html" class="logo">logout</a> -->
+								
+								<!-- <strong>ยินดีต้อนรับ</strong> -->
+								<ul class="icons">
+									<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
+									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+									<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
+									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
+									<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
+									<li><a href="profile.html" class="logo">แก้ไขข้อมูลส่วนตัว</a></li>
+									<li><a href="index.html" class="logo">logout</a></li>
+								</ul>
+								<!-- <i class="fa fa-user-circle" aria-hidden="true"></i> -->
+							</header>
 
 							<!-- Banner -->
-								<section id="banner">
-									<!-- <div class="content">
-										<header>
-											<h1>หน้าหลัก</h1>
-											<p>A free and fully responsive site template</p>
-										</header>
-										<p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
+							<section id="banner">
+								<div class="content">
+									<div class="align-center">
+										<p>ชำระเงินโดยโอนมาที่บัญชี 123-456789 ธนาคารกรุงไทย นายสมชาย พร้อมรับเงิน</p>
+									</div>
+									<form method="post" action="checkorder.php" enctype="multipart/form-data">
+									<div class="row gtr-200">
+										<div class="col-6 col-12-small">
+											
+												<div id="display_image_bill"></div><br>
+												<input type="file" id="image_input_bill" name="file_bill" accept="image/png, image/jpeg">
+												<input type="hidden" id="image_input" >
+										</div>
+										
+										<div class="col-6 col-12-small">
+											
+											
+												
+												<label for="fname">วันที่โอนเงิน:</label>
+												<input type="date" id="day" name="day" value=""><br><br>
+												<label for="lname">เลขบัญชี 4 ตัวท้าย:</label>
+												<input type="number" id="number" name="number" placeholder="xxxx"><br><br>
+												<div class="row gtr-uniform">
+													<!-- <div class="align-center"> -->
+														<label for="fname">ชำระเงินค่า:</label>
+														<?php $money = 0; ?>
+														<div class="col-3 col-12-small">
+															<input onclick="toMudjum();" type="radio" id="demo-priority-low" name="demo-priority" >
+															<label for="demo-priority-low">เงินมัดจำ</label>
+														</div>
+														<!-- <div class="col-3 col-12-small">
+															<input type="radio" id="demo-priority-normal" name="demo-priority">
+															<label for="demo-priority-normal">เงินคงเหลือ</label>
+														</div> -->
+														<div class="col-4 col-12-small">
+															<input onclick="toFull();" type="radio" id="demo-priority-high" name="demo-priority">
+															<label for="demo-priority-high">จ่ายเต็มจำนวน</label>
+														</div>
+													<!-- </div> -->
+												</div><br>
+												<label for="demo-priority-high">จำนวนเงิน : <span id="money" for="demo-priority-high" nowrap;></span></label>
+												
+												<div class="col-12 col-12-small">
+													<input type="button" class="button primary" value="ยกเลิก"></input>
+													<input type="submit" class="button secondary" value="ตกลง"></input>
+												</div>
+												<!-- <label for="fname">phone:</label>
+												<input type="text" id="phone" name="phone" value=""><br> -->
+												<!-- <input type="submit" value="Submit"> -->
+									
+												<!-- <a href="login.html" class="logo">ยืนยัน</a>
+												<a href="login.html" class="logo">ยกเลิก</a> -->
+												
+												</form>
+											</div>
+
+										</div>
+										<!-- <header> -->
+											<!-- <h1>หน้าชำระเงิน</h1> -->
+											<!-- <p>A free and fully responsive site template</p> -->
+										<!-- </header> -->
+										<div class="align-center"></div>
+										<div class="align-center">
+
+										</div>
+										<!-- <p>Aenean ornare velit lacus, ac varius enim ullamcorper eu. Proin aliquam facilisis ante interdum congue. Integer mollis, nisl amet convallis, porttitor magna ullamcorper, amet egestas mauris. Ut magna finibus nisi nec lacinia. Nam maximus erat id euismod egestas. Pellentesque sapien ac quam. Lorem ipsum dolor sit nullam.</p>
 										<ul class="actions">
 											<li><a href="#" class="button big">Learn More</a></li>
-										</ul>
-									</div> -->
+										</ul> -->
+										<div class="align-center">
+										</div>
+									</div>
 									<!-- <span class="image object">
 										<img src="images/pic10.jpg" alt="" />
 									</span> -->
-									<!-- <a href="white.html" target="_blank" style="font-size:12px" class="button icons" ><i class="fa fa-info-circle"></i></a>
-									<div class="col-4"><span class="image fit"><img src="images/pic01.jpg" alt="" /></span></div> -->
 								</section>
 
 							<!-- Section -->
@@ -254,7 +314,9 @@
 			<script src="assets/js/browser.min.js"></script>
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+			<script src="assets/js/main.js" defer></script>
+			<script src="assets/js/app.js" defer></script>
+			
+			
 	</body>
 </html>
