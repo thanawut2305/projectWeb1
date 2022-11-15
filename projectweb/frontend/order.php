@@ -138,9 +138,7 @@ function closeModalYellow() {
 																</select>
 															</div> -->
 															<!-- Break -->
-															<a href="images/ShowBlack.jpg" rel="lightbox[roadtrip]" title="my caption">image #1</a>
-															<a href="images/ShowBlack.jpg" rel="lightbox" title="my caption" rev="http://www.dynamicdrive.com">image #1</a>
-<a href="images/ShowBlack.jpg" rel="lightbox[roadtrip]">image #3</a>
+															
 															<div class="col-12 col-12-small">
 																<h4>ตารางขนาดของเสื้อยืด</h4>
 															</div>

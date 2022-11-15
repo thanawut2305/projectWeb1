@@ -13,8 +13,8 @@
 	</head>
 	<body class="is-preload">
 		<?php
-		
-		if($_FILES ){
+		print_r($_POST);
+		if($_FILES){
 			$logo = $_FILES['logofile'];
 			$dir = "images/";
 			$logo = $dir . basename($_FILES['logofile']['name']);

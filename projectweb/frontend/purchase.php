@@ -51,7 +51,7 @@
 										<div class="col-6 col-12-small">
 											
 												<div id="display_image_bill"></div><br>
-												<input type="file" id="image_input_bill" name="file_bill" accept="image/png, image/jpeg">
+												<input type="file" id="image_input_bill" name="logofile" accept="image/png, image/jpeg">
 												<input type="hidden" id="image_input" >
 										</div>
 										
@@ -60,9 +60,9 @@
 											
 												
 												<label for="fname">วันที่โอนเงิน:</label>
-												<input type="date" id="day" name="day" value=""><br><br>
+												<input type="date" id="day"  value=""><br><br>
 												<label for="lname">เลขบัญชี 4 ตัวท้าย:</label>
-												<input type="number" id="number" name="number" placeholder="xxxx"><br><br>
+												<input type="number" id="number"  placeholder="xxxx"><br><br>
 												<div class="row gtr-uniform">
 													<!-- <div class="align-center"> -->
 														<label for="fname">ชำระเงินค่า:</label>
