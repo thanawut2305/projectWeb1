@@ -6,11 +6,13 @@
 -->
 <html>
 	<head>
+	<?php session_start(); 
+	$_SESSION['color'] = 0;?>
 		<title>Order | silk_screen</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script >function openModalBlack() {
+		<script>function openModalBlack() {
   document.getElementById("ModalBlack").style.display = "block";
 }
 function closeModalBlack() {
@@ -39,7 +41,10 @@ function openModalYellow() {
 }
 function closeModalYellow() {
   document.getElementById("ModalYellow").style.display = "none";
-}</script>
+}
+
+</script>
+<script src="assets/js/app1.js" defer></script>
 <style>
 	.modal {
   display: none;
@@ -64,7 +69,7 @@ function closeModalYellow() {
 
 	</head>
 	<body class="is-preload">
-
+	
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -96,8 +101,8 @@ function closeModalYellow() {
 										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
 									</ul>
-								</header> -->
-									<form method="post" action="checkorder.php" enctype="multipart/form-data">
+								</header> -->							
+									<form method="post" action="checkorder_1.php" enctype="multipart/form-data">
 							<!-- Content -->
 								<section>
 									<!-- <header class="main">
@@ -195,7 +200,44 @@ function closeModalYellow() {
 																</table>
 															</div>
 															</div>
-
+															<h5 id="content">ตำแหน่งภาพห่างจากบน (นิ้ว)</h5>
+															<div class="col-6 col-12-xsmall">
+																<input type="number" id="demo-name" min="2" value="" />
+															</div>
+															<h5 id="content">ตำแหน่งภาพห่างจากล่าง (นิ้ว)</h5>
+															<div class="col-6 col-12-xsmall">
+																<input type="number" id="demo-name" min="2" value="" />
+															</div>
+															<h5 id="content">ตำแหน่งภาพห่างจากซ้าย (นิ้ว)</h5>
+															<div class="col-6 col-12-xsmall">
+																<input type="number" id="demo-name" min="2" value="" />
+															</div>
+															<h5 id="content">ตำแหน่งภาพห่างจากขวา (นิ้ว)</h5>
+															<div class="col-6 col-12-xsmall">
+																<input type="number" id="demo-name" min="2" value="" />
+															</div>
+															<h5 id="content">ขนาดภาพกว้าง (นิ้ว)</h5>
+															<div class="col-6 col-12-xsmall">
+																<input type="number" id="demo-name" step="any" name="wide" min="2" value="" />
+															</div>
+															<h5 id="content">ขนาดภาพยาว (นิ้ว)</h5>
+															<div class="col-6 col-12-xsmall">
+																<input type="number" id="demo-name" step="any" name="long" min="2" value="" />
+															</div>
+															
+															<h3 id="content">จำนวนสี</h3>
+															<div class="col-4 col-12-small"></div>													
+															<div class="col-4 col-12-small"></div>
+															<div class="col-4 col-12-small">
+																<input onclick="color()" type="radio" id="1" name="number" value="1" >
+																<label for="1">1 สี</label>
+															</div>
+															<div class="col-4 col-12-small">
+																<input onclick="morecolor()" type="radio" id="2" name="number" value="2">
+																<label for="2">มากกว่า 1 สี</label>
+															</div>
+															
+															<div></div><div></div>
 															<!-- size T-shirt -->
 															<h3 id="content">ไซส์เสื้อยืด</h3>
 															<div class="col-4 col-12-small">
@@ -203,29 +245,30 @@ function closeModalYellow() {
 															<div class="col-4 col-12-small">
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-low" name="demo-priority">
+																<input type="radio" id="demo-priority-low" name="demo-priority" value="S">
 																<label for="demo-priority-low">S</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-normal" name="demo-priority">
+																<input type="radio" id="demo-priority-normal" name="demo-priority" value="M">
 																<label for="demo-priority-normal">M</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-high" name="demo-priority">
+																<input type="radio" id="demo-priority-high" name="demo-priority" value="L">
 																<label for="demo-priority-high">L</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-low1" name="demo-priority">
+																<input type="radio" id="demo-priority-low1" name="demo-priority" value="XL">
 																<label for="demo-priority-low1">XL</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-normal1" name="demo-priority">
+																<input type="radio" id="demo-priority-normal1" name="demo-priority" value="XXL">
 																<label for="demo-priority-normal1">XXL</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-high1" name="demo-priority">
+																<input type="radio" id="demo-priority-high1" name="demo-priority" value="XXXL">
 																<label for="demo-priority-high1">XXXL</label>
 															</div>
+															
 															<!-- color T-shirt -->
 															<h3 id="content">สีเสื้อยืด</h3>
 															<div class="col-4 col-12-small"></div>
@@ -233,35 +276,35 @@ function closeModalYellow() {
 															<div class="col-4 col-12-small">
 																<div class="boxShowShirt">
 																	<div class="img-resize2"><span><img name="img" class="zoom" src="images/ShowWhite.jpg" onmouseover="openModalWhite();" onmouseout="closeModalWhite()" alt="" /></span></div><br>
-																	<input type="radio" id="demo-priority-low-color" name="demo-priority1" value="images/ShowWhite.jpg">
+																	<input type="radio" id="demo-priority-low-color" name="demo-priority1" value="images/ShowWhite.jpg,สีขาว">
 																	<label for="demo-priority-low-color">สีขาว</label>
 																</div>
 															</div>
 															<div class="col-4 col-12-small">
 																<div class="boxShowShirt">
 																	<div class="img-resize2"><span><img src="images/ShowBlack.jpg" onmouseover="openModalBlack();" onmouseout="closeModalBlack()" alt="" /></span></div><br>
-																	<input type="radio" id="demo-priority-normal-color" name="demo-priority1" value="images/ShowBlack.jpg">
+																	<input type="radio" id="demo-priority-normal-color" name="demo-priority1" value="images/ShowBlack.jpg,สีดำ">
 																	<label for="demo-priority-normal-color">สีดำ</label>
 																</div>
 															</div>
 															<div class="col-4 col-12-small">
 																<div class="boxShowShirt">
 																	<div class="img-resize2"><span><img src="images/ShowBlue.jpg" onmouseover="openModalBlue();" onmouseout="closeModalBlue()" alt="" /></span></div><br>
-																	<input type="radio" id="demo-priority-high-color" name="demo-priority1" value="images/ShowBlue.jpg">
+																	<input type="radio" id="demo-priority-high-color" name="demo-priority1" value="images/ShowBlue.jpg,สีฟ้า">
 																	<label for="demo-priority-high-color">สีฟ้า</label>
 																</div>
 															</div>
 															<div class="col-4 col-12-small">
 																<div class="boxShowShirt">
 																	<div class="img-resize2"><span><img src="images/ShowOrange.jpg" onmouseover="openModalOrange();" onmouseout="closeModalOrange()" alt="" /></span></div><br>
-																	<input type="radio" id="demo-priority-low1-color1" name="demo-priority1" value="images/ShowOrange.jpg">
+																	<input type="radio" id="demo-priority-low1-color1" name="demo-priority1" value="images/ShowOrange.jpg,สีส้ม">
 																	<label for="demo-priority-low1-color1">สีส้ม</label>
 																	</div>
 																</div>
 															<div class="col-4 col-12-small">
 															<div class="boxShowShirt">
 																<div class="img-resize2"><span><img src="images/ShowYellow.jpg" onmouseover="openModalYellow();" onmouseout="closeModalYellow()" alt="" /></span></div><br>
-																<input type="radio" id="demo-priority-normal1-color1" name="demo-priority1" value="images/ShowYellow.jpg">
+																<input type="radio" id="demo-priority-normal1-color1" name="demo-priority1" value="images/ShowYellow.jpg,สีเหลือง">
 																<label for="demo-priority-normal1-color1">สีเหลือง</label>
 															</div>
 															</div>
@@ -309,7 +352,7 @@ function closeModalYellow() {
 															<!-- number of T-shirt -->
 															<h3 id="content">จำนวนเสื้อยืด</h3>
 															<div class="col-6 col-12-xsmall">
-																<input type="number" id="demo-name" value="" />
+																<input type="number" id="demo-name" name="quantity" min="1" value="" />
 															</div>
 															<div class="col-6 col-12-xsmall">
 																<h3 id="content">สีที่จะใช้สกรีน</h3>
@@ -319,7 +362,7 @@ function closeModalYellow() {
 																<div id="box"></div>
 															</div>
 															<div class="col-2 col-2-xsmall">
-																<input type="color" id="colorInputColor">
+																<input type="color" id="colorInputColor" name="colorRGB">
 															</div>
 															<div class="col-4 col-12-xsmall">
 																<input type="button" id="colorButton" value="เลือกใช้" onclick="changeColor()">
@@ -329,7 +372,8 @@ function closeModalYellow() {
 															</div>
 															<div class="col-12 col-12-small">
 																<input type="button" class="button primary" value="ยกเลิก"></input>
-																<input type="submit" class="button secondary" value="ยืนยันการสั่ง"></input>
+																<input type="hidden" name="controller" value="<span id='color'></span>"/>
+																<button type="submit" class="button secondary" name="action" value="check">ยืนยันการสั่ง</input>
 																
 															</div>
 															

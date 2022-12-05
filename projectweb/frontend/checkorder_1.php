@@ -30,7 +30,7 @@
 			$colorRGB = $_POST['colorRGB'];
 			$wide = $_POST['wide'];
 			$long = $_POST['long'];
-			$num = $_POST['number'];
+			$number = $_POST['number'];
 			$price = $quantity*10;
 			if($wide>=8.3&&$wide<11.7){
 				if($long>=11.7&&$long<16.5){
@@ -44,7 +44,6 @@
 					$price = 350+$price;
 			}
 			$deposit = $price*40/100;
-			print_r($num);
 		}
 		?>
 		<style>
@@ -64,58 +63,77 @@
 
 							<!-- Header -->
 								<header id="header">
-									<!-- <a href="index.html" class="logo"><strong>ยินดีต้อนรับ</strong> by HTML5 UP</a> -->
+
 									<p>ยินดีต้อนรับ คุณ admin</p>
 									<ul class="icons">
-										<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
+										
 										<li><a href="profile.html" class="logo">แก้ไขข้อมูลส่วนตัว</a></li>
 										<li><a href="index.html" class="logo">logout</a></li>
 									</ul>
-									<!-- <i class="fa fa-user-circle" aria-hidden="true"></i> -->
-								</header>
-								<!-- <header id="header">
-									<a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-									</ul>
-								</header> -->
 
-							<!-- Content -->
+								</header>
 								<section>
-										<div class="col-12 col-12-small">
-																<h4>คำสั่งซื้อ</h4>
-															</div>
-															<div class="col-10 col-12-small">
-															<div class="table-wrapper">
-																<table class="alt">
-																	<thead>
-																		<tr>
-																			<th>เลขที่ใบสั่งซื้อ</th>
-																			<th>ราคา</th>
-																		</tr>
-																	</thead>
-																	<tbody>
-																		<tr>
-																			<td><a href="checkorder_1.php">00001</a></td>
-																			<td>1000</td>
-																		</tr>
-																		<tr>
-																			<td><a href="checkorder_2.php">00002</a></td>
-																			<td>กำลังประเมิน</td>
-																			
-																	</tbody>
-																	
-																</table>
-															</div>
-															</div>
+									
+										<div class="row gtr-200">
+											<div class="col-6 col-12-medium">
+
+												<div class="displayShirt">
+													<!-- <div class="col-8 col-12-small">
+														<p>รูปที่จะใช้สกรีน</p>
+													</div> -->
+													<p><strong>ภาพที่จะใช้สกรีน</strong></p>
+													<div class="img-resize"><span><img src="<?php echo $logo; ?>" alt="" /></span></div>
+													<!-- <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. </p> -->
+	
+												</div>
+												<div class="displayShirt">
+													<p><strong>เสื้อยืดที่เลือก</strong></p>
+													<div class="img-resize"><span><img src="<?php echo $color; ?>" alt="" /></span></div><br>
+												</div>
+
+											</div>
+											<div class="col-6 col-12-medium">
+
+												<form class="boxOrder" method="post" action="purchase_1.php" enctype="multipart/form-data" name="from1">
+													<label for="fname">ไซส์เสื้อยืด: <?php echo $size; ?> </label>
+													<br>
+													<label for="lname">สีเสื้อยืด: <?php echo $color_name; ?></label>
+													<br>
+													<label for="fname">จำนวนเสื้อยืด: <?php echo $quantity; ?></label>
+													<br>
+													<label for="lname">สีที่จะใช้สกรีน: </label><div class="col-6 col-12-xsmall">
+														<div class="center"></div>
+													</div>
+													<br>
+													<!-- <input type="text" id="addr" name="addr" value="12 nowhere"><br> -->
+													<?php $date=date('d/m/Y',strtotime($date . "+3 days")); 
+													if($number == 1){ ?>
+													<label for="fname">ราคารวม: <?php echo $price; ?> บาท</label>
+													<input type="hidden" name="price" value="<?php echo $price; ?>"></input>
+													<label for="lname">ค่ามัดจำ 40% คิดเป็น: <?php echo $deposit; ?> บาท</label>
+													<input type="hidden" name="deposit" value="<?php echo $deposit; ?>"></input>
+													<input type="submit" class="button secondary" value="ชำระเงิน"></input>
+													<?php }else if($number == 2){?>
+														<label for="fname">ราคารวม: แอดมินกำลังประเมินราคา</label>
+													<label for="lname" style="display: inline">การประเมินราคาจะเสร็จภายในวันที่ <?php echo $date; ?></label>
+													<?php } ?>
+													
+													<!-- <a href="purchase.html" class="button secondary">ชำระเงินคงเหลือ</a> -->
+													<br><br>
+													<label for="lname">สถานะการชำระเงินมัดจำ: <span style="color:red">ยังไม่ชำระ</span></label>
+													<label for="lname">สถานะการชำระเงินคงเหลือ: <span style="color:rgb(0, 0, 0)">-</span></label>
+													<label for="lname">บริการขนส่งโดย: -</label>
+													<label for="lname">หมายเลขรหัสพัสดุ: -</label>
+													<!-- <input type="submit" value="Submit"> -->
+												</form>
+
+												
+													<form method="post" action="#">
+														<div class="row gtr-uniform">
+															
+
+											</div>
+										</div>
 
 								</section>
 
