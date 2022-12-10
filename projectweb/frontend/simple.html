@@ -6,70 +6,13 @@
 -->
 <html>
 	<head>
-	<?php session_start(); 
-	$_SESSION['color'] = 0;?>
 		<title>Order | silk_screen</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<script>function openModalBlack() {
-  document.getElementById("ModalBlack").style.display = "block";
-}
-function closeModalBlack() {
-  document.getElementById("ModalBlack").style.display = "none";
-}
-function openModalWhite() {
-  document.getElementById("ModalWhite").style.display = "block";
-}
-function closeModalWhite() {
-  document.getElementById("ModalWhite").style.display = "none";
-}
-function openModalBlue() {
-  document.getElementById("ModalBlue").style.display = "block";
-}
-function closeModalBlue() {
-  document.getElementById("ModalBlue").style.display = "none";
-}
-function openModalOrange() {
-  document.getElementById("ModalOrange").style.display = "block";
-}
-function closeModalOrange() {
-  document.getElementById("ModalOrange").style.display = "none";
-}
-function openModalYellow() {
-  document.getElementById("ModalYellow").style.display = "block";
-}
-function closeModalYellow() {
-  document.getElementById("ModalYellow").style.display = "none";
-}
-
-</script>
-<script src="assets/js/app1.js" defer></script>
-<style>
-	.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  padding-top: 50px;
-  left: 335px;
-  top: 10;
-  width: 495px;
-  height: 495px;
-  overflow: hidden;
-  background-color: white;
-}
-
-/* Modal Content */
-
-
-/* The Close Button */
-
-
-</style>
-
 	</head>
 	<body class="is-preload">
-	
+
 		<!-- Wrapper -->
 			<div id="wrapper">
 
@@ -101,8 +44,8 @@ function closeModalYellow() {
 										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
 										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
 									</ul>
-								</header> -->							
-									<form method="post" action="checkorder_1.php" enctype="multipart/form-data">
+								</header> -->
+
 							<!-- Content -->
 								<section>
 									<!-- <header class="main">
@@ -111,43 +54,19 @@ function closeModalYellow() {
 
 									<div class="row gtr-200">
 										<div class="col-6 col-12-medium">
-
+                                            <h4>ตัวอย่างงาน</h4>
 											<div id="boxCenter">
 												<div id="display_image"></div><br>
 												<!-- <span>*กรุณาเลือกลายรูป*</span><br><br> -->
-												<input type="file" id="image_input" name="logofile" accept="image/png, image/jpeg">
-												
-											</div><br><br>
-											<div class="col-6 col-12-xsmall">
-													<h5 id="content">ตำแหน่งภาพห่างจากบน (นิ้ว)</h5>
-													<input type="number" id="demo-name" min="2" value="" />
-												</div>
-												<h5 id="content">ตำแหน่งภาพห่างจากล่าง (นิ้ว)</h5>
-												<div class="col-6 col-12-xsmall">
-													<input type="number" id="demo-name" min="2" value="" />
-												</div>
-												<h5 id="content">ตำแหน่งภาพห่างจากซ้าย (นิ้ว)</h5>
-												<div class="col-6 col-12-xsmall">
-													<input type="number" id="demo-name" min="2" value="" />
-												</div>
-												<h5 id="content">ตำแหน่งภาพห่างจากขวา (นิ้ว)</h5>
-												<div class="col-6 col-12-xsmall">
-													<input type="number" id="demo-name" min="2" value="" />
-												</div>
-												<h5 id="content">ขนาดภาพกว้าง (นิ้ว)</h5>
-												<div class="col-6 col-12-xsmall">
-													<input type="number" id="demo-name" step="any" name="wide" min="2" value="" />
-												</div>
-												<h5 id="content">ขนาดภาพยาว (นิ้ว)</h5>
-												<div class="col-6 col-12-xsmall">
-													<input type="number" id="demo-name" step="any" name="long" min="2" value="" />
-												</div>
+												<!-- <input type="file" id="image_input" name="file" accept="image/png, image/jpeg"> -->
+											</div>
+											
 										</div>
 										
 										<div class="col-6 col-12-medium">
 											<!-- <h3>Form</h3> -->
 
-													
+													<form method="post" action="#">
 														<div class="row gtr-uniform">
 															<!-- <div class="col-6 col-12-xsmall">
 																<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
@@ -166,193 +85,143 @@ function closeModalYellow() {
 																</select>
 															</div> -->
 															<!-- Break -->
-															
 															<div class="col-12 col-12-small">
-																<h4>ตารางขนาดของเสื้อยืด</h4>
+																<h4>ข้าพเจ้าได้ตรวจสอบตัวอย่างของงานแล้วพบว่า</h4>
 															</div>
-															<div class="col-10 col-12-small">
-																<div class="table-wrapper">
-																	<table class="alt">
-																		<thead>
-																			<tr>
-																				<th>ขนาด<br>(Size)</th>
-																				<th>รอบอก<br>(chest) / inch</th>
-																				<th>ความยาว<br>(length) / inch</th>
-																				<th>ความยาวแขน<br>(arm length) / inch</th>
-																			</tr>
-																		</thead>
-																		<tbody>
-																			<tr>
-																				<td>S</td>
-																				<td>34.0</td>
-																				<td>25.0</td>
-																				<td>7.5</td>
-																			</tr>
-																			<tr>
-																				<td>M</td>
-																				<td>37.0</td>
-																				<td>27.0</td>
-																				<td>8.0</td>
-																			</tr>
-																				<tr>
-																				<td>L</td>
-																				<td>40.0</td>
-																				<td>28.0</td>
-																				<td>9.0</td>
-																			</tr>
-																			<tr>
-																				<td>XL</td>
-																				<td>43.0</td>
-																				<td>29.0</td>
-																				<td>10.0</td>
-																			</tr>
-																			<tr>
-																				<td>XXL</td>
-																				<td>46.0</td>
-																				<td>29.5</td>
-																				<td>11.0</td>
-																			</tr>
-																			<tr>
-																				<td>XXXL</td>
-																				<td>50.0</td>
-																				<td>30.0</td>
-																				<td>11.0</td>
-																			</tr>
-																		</tbody>
+															<!-- <div class="col-10 col-12-small">
+															<div class="table-wrapper">
+																<table class="alt">
+																	<thead>
+																		<tr>
+																			<th>ขนาด<br>(Size)</th>
+																			<th>รอบอก<br>(chest) / inch</th>
+																			<th>ความยาว<br>(length) / inch</th>
+																			<th>ความยาวแขน<br>(arm length) / inch</th>
+																		</tr>
+																	</thead>
+																	<tbody>
+																		<tr>
+																			<td>S</td>
+																			<td>34.0</td>
+																			<td>25.0</td>
+																			<td>7.5</td>
+																		</tr>
+																		<tr>
+																			<td>M</td>
+																			<td>37.0</td>
+																			<td>27.0</td>
+																			<td>8.0</td>
+																		</tr>
+																		<tr>
+																			<td>L</td>
+																			<td>40.0</td>
+																			<td>28.0</td>
+																			<td>9.0</td>
+																		</tr>
+																		<tr>
+																			<td>XL</td>
+																			<td>43.0</td>
+																			<td>29.0</td>
+																			<td>10.0</td>
+																		</tr>
+																		<tr>
+																			<td>XXL</td>
+																			<td>46.0</td>
+																			<td>29.5</td>
+																			<td>11.0</td>
+																		</tr>
+																		<tr>
+																			<td>XXXL</td>
+																			<td>50.0</td>
+																			<td>30.0</td>
+																			<td>11.0</td>
+																		</tr>
+																	</tbody>
 																	
-																	</table>
-																</div>
+																</table>
 															</div>
-															
-															
-															<h3 id="content">จำนวนสี</h3>
-															<div class="col-4 col-12-small"></div>													
-															<div class="col-4 col-12-small"></div>
-															<div class="col-4 col-12-small">
-																<input onclick="color()" type="radio" id="1" name="number" value="1" >
-																<label for="1">1 สี</label>
-															</div>
-															<div class="col-4 col-12-small">
-																<input onclick="morecolor()" type="radio" id="2" name="number" value="2">
-																<label for="2">มากกว่า 1 สี</label>
-															</div>
-															
-															<div></div><div></div>
+															</div> -->
+
 															<!-- size T-shirt -->
-															<h3 id="content">ไซส์เสื้อยืด</h3>
+															<!-- <h3 id="content">ไซส์เสื้อยืด</h3>
 															<div class="col-4 col-12-small">
 															</div>
 															<div class="col-4 col-12-small">
+															</div> -->
+															<div class="col-8 col-12-small">
+																<input type="radio" id="demo-priority-low" name="demo-priority">
+																<label for="demo-priority-low">งานถูกต้อง</label>
 															</div>
-															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-low" name="demo-priority" value="S">
-																<label for="demo-priority-low">S</label>
-															</div>
-															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-normal" name="demo-priority" value="M">
-																<label for="demo-priority-normal">M</label>
-															</div>
-															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-high" name="demo-priority" value="L">
+															<div class="col-8 col-12-small">
+																<input type="radio" id="demo-priority-normal" name="demo-priority">
+																<label for="demo-priority-normal">งานไม่ถูกต้อง</label>
+															</div><br>
+                                                            <div class="col-10 col-12-small">
+                                                                <h4>หมายเหตุ / สาเหตุที่งานไม่ถูกต้อง</h4>
+                                                                <div class="col-12">
+                                                                    <textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
+                                                                </div><br>
+                                                            </div>
+															<!-- <div class="col-4 col-12-small">
+																<input type="radio" id="demo-priority-high" name="demo-priority">
 																<label for="demo-priority-high">L</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-low1" name="demo-priority" value="XL">
+																<input type="radio" id="demo-priority-low1" name="demo-priority">
 																<label for="demo-priority-low1">XL</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-normal1" name="demo-priority" value="XXL">
+																<input type="radio" id="demo-priority-normal1" name="demo-priority">
 																<label for="demo-priority-normal1">XXL</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-high1" name="demo-priority" value="XXXL">
+																<input type="radio" id="demo-priority-high1" name="demo-priority">
 																<label for="demo-priority-high1">XXXL</label>
-															</div>
-															
+															</div> -->
 															<!-- color T-shirt -->
-															<h3 id="content">สีเสื้อยืด</h3>
+															<!-- <h3 id="content">สีเสื้อยืด</h3>
 															<div class="col-4 col-12-small"></div>
 															<div class="col-4 col-12-small"></div>
 															<div class="col-4 col-12-small">
 																<div class="boxShowShirt">
-																	<div class="img-resize2"><span><img name="img" class="zoom" src="images/ShowWhite.jpg" onmouseover="openModalWhite();" onmouseout="closeModalWhite()" alt="" /></span></div><br>
-																	<input type="radio" id="demo-priority-low-color" name="demo-priority1" value="images/ShowWhite.jpg,สีขาว">
+																	<div class="img-resize2"><span><img src="images/ShowWhite.jpg" alt="" /></span></div><br>
+																	<input type="radio" id="demo-priority-low-color" name="demo-priority1">
 																	<label for="demo-priority-low-color">สีขาว</label>
 																</div>
 															</div>
 															<div class="col-4 col-12-small">
 																<div class="boxShowShirt">
-																	<div class="img-resize2"><span><img src="images/ShowBlack.jpg" onmouseover="openModalBlack();" onmouseout="closeModalBlack()" alt="" /></span></div><br>
-																	<input type="radio" id="demo-priority-normal-color" name="demo-priority1" value="images/ShowBlack.jpg,สีดำ">
+																	<div class="img-resize2"><span><img src="images/ShowBlack.jpg" alt="" /></span></div><br>
+																	<input type="radio" id="demo-priority-normal-color" name="demo-priority1">
 																	<label for="demo-priority-normal-color">สีดำ</label>
 																</div>
 															</div>
 															<div class="col-4 col-12-small">
 																<div class="boxShowShirt">
-																	<div class="img-resize2"><span><img src="images/ShowBlue.jpg" onmouseover="openModalBlue();" onmouseout="closeModalBlue()" alt="" /></span></div><br>
-																	<input type="radio" id="demo-priority-high-color" name="demo-priority1" value="images/ShowBlue.jpg,สีฟ้า">
+																	<div class="img-resize2"><span><img src="images/ShowBlue.jpg" alt="" /></span></div><br>
+																	<input type="radio" id="demo-priority-high-color" name="demo-priority1">
 																	<label for="demo-priority-high-color">สีฟ้า</label>
 																</div>
 															</div>
 															<div class="col-4 col-12-small">
 																<div class="boxShowShirt">
-																	<div class="img-resize2"><span><img src="images/ShowOrange.jpg" onmouseover="openModalOrange();" onmouseout="closeModalOrange()" alt="" /></span></div><br>
-																	<input type="radio" id="demo-priority-low1-color1" name="demo-priority1" value="images/ShowOrange.jpg,สีส้ม">
+																	<div class="img-resize2"><span><img src="images/ShowOrange.jpg" alt="" /></span></div><br>
+																	<input type="radio" id="demo-priority-low1-color1" name="demo-priority1">
 																	<label for="demo-priority-low1-color1">สีส้ม</label>
 																	</div>
 																</div>
 															<div class="col-4 col-12-small">
 															<div class="boxShowShirt">
-																<div class="img-resize2"><span><img src="images/ShowYellow.jpg" onmouseover="openModalYellow();" onmouseout="closeModalYellow()" alt="" /></span></div><br>
-																<input type="radio" id="demo-priority-normal1-color1" name="demo-priority1" value="images/ShowYellow.jpg,สีเหลือง">
+																<div class="img-resize2"><span><img src="images/ShowYellow.jpg" alt="" /></span></div><br>
+																<input type="radio" id="demo-priority-normal1-color1" name="demo-priority1">
 																<label for="demo-priority-normal1-color1">สีเหลือง</label>
 															</div>
 															</div>
-															<div id="ModalBlack" class="modal">
-
-  <div class="modal-content">
-
-      <img src="images/ShowBlack.jpg" style="width:450px" class="center">
-    
-  </div>
-</div>
-<div id="ModalWhite" class="modal">
-
-  <div class="modal-content">
-
-      <img src="images/ShowWhite.jpg" style="width:450px" class="center">
-    
-  </div>
-</div>
-<div id="ModalBlue" class="modal">
-
-  <div class="modal-content">
-
-      <img src="images/ShowBlue.jpg" style="width:450px" class="center">
-    
-  </div>
-</div>
-<div id="ModalOrange" class="modal">
-
-  <div class="modal-content">
-
-      <img src="images/ShowOrange.jpg" style="width:450px" class="center">
-    
-  </div>
-</div>
-<div id="ModalYellow" class="modal">
-
-  <div class="modal-content">
-
-      <img src="images/ShowYellow.jpg" style="width:450px" class="center">
-    
-  </div>
-</div>
-															<div class="col-4 col-12-small"></div>
+															<div class="col-4 col-12-small"></div> -->
 															<!-- number of T-shirt -->
-															<h3 id="content">จำนวนเสื้อยืด</h3>
+															<!-- <h3 id="content">จำนวนเสื้อยืด</h3>
 															<div class="col-6 col-12-xsmall">
-																<input type="number" id="demo-name" name="quantity" min="1" value="" />
+																<input type="number" name="demo-name" id="demo-name" value="" />
 															</div>
 															<div class="col-6 col-12-xsmall">
 																<h3 id="content">สีที่จะใช้สกรีน</h3>
@@ -362,19 +231,17 @@ function closeModalYellow() {
 																<div id="box"></div>
 															</div>
 															<div class="col-2 col-2-xsmall">
-																<input type="color" id="colorInputColor" name="colorRGB">
+																<input type="color" id="colorInputColor">
 															</div>
 															<div class="col-4 col-12-xsmall">
 																<input type="button" id="colorButton" value="เลือกใช้" onclick="changeColor()">
-															</div>
+															</div> -->
 															<div class="col-6 col-12-xsmall">
 																<input type="hidden" id="colorInputText">
 															</div>
 															<div class="col-12 col-12-small">
 																<input type="button" class="button primary" value="ยกเลิก"></input>
-																<input type="hidden" name="controller" value="<span id='color'></span>"/>
-																<button type="submit" class="button secondary" name="action" value="check">ยืนยันการสั่ง</input>
-																
+																<a href="checkorder.html" class="button secondary">ยืนยันตัวอย่าง</a>
 															</div>
 															
 															<!-- Break -->
@@ -452,8 +319,8 @@ function closeModalYellow() {
 								</header>
 								<ul>
 									<li><a href="indexLoginIsTrue.html">หน้าหลัก</a></li>
-									<li><a href="order.php">การสั่งสกรีนเสื้อผ้า</a></li>
-									<li><a href="checkorder.php">ตรวจสอบสินค้า</a></li>
+									<li><a href="order.html">การสั่งสกรีนเสื้อผ้า</a></li>
+									<li><a href="checkorder.html">ตรวจสอบสินค้า</a></li>
 									<!-- <li>
 										<span class="opener">Submenu</span>
 										<ul>
@@ -463,7 +330,7 @@ function closeModalYellow() {
 											<li><a href="#">Feugiat Veroeros</a></li>
 										</ul>
 									</li> -->
-									<li><a href="purchase.php">การชำระเงิน</a></li>
+									<li><a href="purchase.html">การชำระเงิน</a></li>
 									<!-- <li><a href="#">Adipiscing</a></li> -->
 									<!-- <li>
 										<span class="opener">Another Submenu</span>
@@ -476,7 +343,7 @@ function closeModalYellow() {
 									</li> -->
 									<!-- <li><a href="#">Maximus Erat</a></li> -->
 									<!-- <li><a href="#">Sapien Mauris</a></li> -->
-									<li><a href="simple.html">ตัวอย่างของงาน</a></li>
+                                    <li><a href="simple.html">ตัวอย่างของงาน</a></li>
 									<li><a href="contact.html">ติดต่อเรา</a></li>
 								</ul>
 							</nav>
