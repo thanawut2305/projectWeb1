@@ -386,7 +386,7 @@
 												<form class="boxOrder">
 													<label for="fname">ไซส์เสื้อยืด: <?php echo $size; ?> </label>
 													<br>
-													<label for="lname">สีเสื้อยืด: <?php echo $color_name; ?></label>
+													<label for="lname">สีเสื้อยืด : <?php echo $color_name; ?></label>
 													<br>
 													<label for="fname">จำนวนเสื้อยืด: <?php echo $quantity; ?></label>
 													<br>

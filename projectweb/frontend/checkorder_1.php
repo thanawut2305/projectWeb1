@@ -99,7 +99,7 @@
 													<br>
 													<label for="lname">สีเสื้อยืด: <?php echo $color_name; ?></label>
 													<br>
-													<label for="fname">จำนวนเสื้อยืด: <?php echo $quantity; ?></label>
+													<label for="fname">จำนวนเสื้อยืด : <?php echo $quantity; ?></label>
 													<br>
 													<label for="lname">สีที่จะใช้สกรีน: </label><div class="col-6 col-12-xsmall">
 														<div class="center"></div>
