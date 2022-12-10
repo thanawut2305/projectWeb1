@@ -569,7 +569,7 @@ print 'It took ' + i + ' iterations to sort the deck.';
 								<ul>
 									<li><a href="indexLoginIsTrue.html">หน้าหลัก</a></li>
 									<li><a href="order.php">การสั่งสกรีนเสื้อผ้า</a></li>
-									<li><a href="checkorder.php">ตรวจสอบสินค้า</a></li>
+									<li><a href="shopping.php">การซื้อของฉัน</a></li>
 									<!-- <li>
 										<span class="opener">Submenu</span>
 										<ul>
@@ -579,7 +579,7 @@ print 'It took ' + i + ' iterations to sort the deck.';
 											<li><a href="#">Feugiat Veroeros</a></li>
 										</ul>
 									</li> -->
-									<li><a href="purchase.php">การชำระเงิน</a></li>
+									
 									<!-- <li><a href="#">Adipiscing</a></li> -->
 									<!-- <li>
 										<span class="opener">Another Submenu</span>

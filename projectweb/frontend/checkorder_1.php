@@ -112,6 +112,8 @@
 													<input type="hidden" name="price" value="<?php echo $price; ?>"></input>
 													<label for="lname">ค่ามัดจำ 40% คิดเป็น: <?php echo $deposit; ?> บาท</label>
 													<input type="hidden" name="deposit" value="<?php echo $deposit; ?>"></input>
+													
+													<a href="indexLoginIsTrue.html" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก')" class="button primary">ยกเลิก</a>
 													<input type="submit" class="button secondary" value="ชำระเงิน"></input>
 													<?php }else if($number == 2){?>
 														<label for="fname">ราคารวม: แอดมินกำลังประเมินราคา</label>
@@ -159,7 +161,7 @@
 								<ul>
 									<li><a href="indexLoginIsTrue.html">หน้าหลัก</a></li>
 									<li><a href="order.php">การสั่งสกรีนเสื้อผ้า</a></li>
-									<li><a href="checkorder.php">ตรวจสอบสินค้า</a></li>
+									<li><a href="shopping.php">การซื้อของฉัน</a></li>
 									<!-- <li>
 										<span class="opener">Submenu</span>
 										<ul>
@@ -169,7 +171,7 @@
 											<li><a href="#">Feugiat Veroeros</a></li>
 										</ul>
 									</li> -->
-									<li><a href="purchase.php">การชำระเงิน</a></li>
+									
 									<!-- <li><a href="#">Adipiscing</a></li> -->
 									<!-- <li>
 										<span class="opener">Another Submenu</span>

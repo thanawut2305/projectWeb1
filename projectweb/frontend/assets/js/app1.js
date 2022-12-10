@@ -13,3 +13,11 @@ function color(){
 function morecolor(){
     document.getElementById("color").innerHTML = 2;
 }
+function slider(){
+    var output = document.getElementById("demo");
+    var slider = document.getElementById("myRange").oninput = function(){
+        var value = (this.value-this.min)/(this.max-this.min)*100;
+        output.innerHTML =this.value;
+    }
+
+}
