@@ -592,6 +592,7 @@ print 'It took ' + i + ' iterations to sort the deck.';
 									</li> -->
 									<!-- <li><a href="#">Maximus Erat</a></li> -->
 									<!-- <li><a href="#">Sapien Mauris</a></li> -->
+									<li><a href="simple.html">ตัวอย่างของงาน</a></li>
 									<li><a href="contact.html">ติดต่อเรา</a></li>
 								</ul>
 							</nav>
