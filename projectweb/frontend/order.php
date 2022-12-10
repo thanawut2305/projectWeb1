@@ -70,6 +70,20 @@ function slider3(){
         output.innerHTML =this.value;
     }
 }
+function slider4(){
+    var output = document.getElementById("demo4");
+    var slider = document.getElementById("myRange4").oninput = function(){
+        var value = (this.value-this.min)/(this.max-this.min)*100;
+        output.innerHTML =this.value;
+    }
+}
+function slider5(){
+    var output = document.getElementById("demo5");
+    var slider = document.getElementById("myRange5").oninput = function(){
+        var value = (this.value-this.min)/(this.max-this.min)*100;
+        output.innerHTML =this.value;
+    }
+}
 </script>
 <script type="text/javascript" src="assets/js/app1.js" defer></script>
 <style>
@@ -173,13 +187,17 @@ function slider3(){
 													</div>
 												<h5 id="content">ขนาดภาพกว้าง (นิ้ว)</h5>
 												<div class="col-6 col-12-xsmall">
-													<input type="number" id="demo-name" step="any" name="wide" min="2" value="" />
+												<div class="value-container">
+													<span id="demo4">0</span></div> 
+													<input type="range" id="myRange4" class="slider" value="0" name="points" min="0" max="100" step="1" oninput = "slider4()">
 												</div>
 												<h5 id="content">ขนาดภาพยาว (นิ้ว)</h5>
 												<div class="col-6 col-12-xsmall">
-													<input type="number" id="demo-name" step="any" name="long" min="2" value="" />
+												<div class="value-container">
+													<span id="demo5">0</span></div> 
+													<input type="range" id="myRange5" class="slider" value="0" name="points" min="0" max="100" step="1" oninput = "slider5()">
 												</div>
-										</div>
+											</div>
 										
 										<div class="col-6 col-12-medium">
 											<!-- <h3>Form</h3> -->
