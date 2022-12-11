@@ -97,7 +97,7 @@ function toFull(){
 																			<td>กำลังผลิต</a></td>
 																		</tr>
 																		<tr>
-																		<td><a href="checkorder_2.php"><img class="modal" src="images/cartoon-tree-logo-image-5a3c58ec05a0d7.0143060915139043640232.jpg" alt="" /></a></td>
+																		<td><a href="checkorder_2.php"><img class="modal" src="images/foxx.jpg" alt="" /></a></td>
 																			<td><a href="checkorder_2.php">ตรวจสอบสินค้า</a></td>
 																			<td><a href="purchase_1.php">ชำระเงิน</a></td>
 																			<td><a href="simple.php">ตัวอย่างสินค้า</a></td>
