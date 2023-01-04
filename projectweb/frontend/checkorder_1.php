@@ -16,10 +16,12 @@
 		<?php
 		@ini_set('display_errors', '0');
 		if($_FILES){
+			session_start(); 
 			$logo = $_FILES['logofile'];
 			$dir = "images/";
 			$logo = $dir . basename($_FILES['logofile']['name']);
 			move_uploaded_file($_FILES['logofile']['tmp_name'],$logo);
+			$_SESSION["screenPicture"]=$logo;
 		}
 		if($_POST){
 			$option = explode(",", $_POST['demo-priority1']);
@@ -28,6 +30,10 @@
 			$size = $_POST['demo-priority'];
 			$quantity = $_POST['quantity'];
 			$colorRGB = $_POST['colorRGB'];
+			$w = $_POST['points1'];
+			$s = $_POST['points2'];
+			$a = $_POST['points3'];
+			$d = $_POST['points4'];
 			$wide = $_POST['wide'];
 			$long = $_POST['long'];
 			$number = $_POST['number'];
@@ -44,7 +50,27 @@
 					$price = 350+$price;
 			}
 			$deposit = $price*40/100;
+			$_SESSION["color"]=$color;
+			$_SESSION["color_name"]=$color_name;
+			$_SESSION["quantity"]=$quantity;
+			$_SESSION["size"]=$size;
+			$_SESSION["number"]=$number;
+			$_SESSION["colorRGB"]=$colorRGB;
+			$_SESSION["price"]=$price;
+			$_SESSION["deposit"]=$deposit;
+			$_SESSION["w"]=$w;
+			$_SESSION["s"]=$s;
+			$_SESSION["a"]=$a;
+			$_SESSION["d"]=$d;
+			$_SESSION["wide"]=$wide;
+			$_SESSION["long"]=$long;
+			$_SESSION["name"]="admin";
+			$_SESSION["fname"]="Smith";
+			$_SESSION["address"]="123 กำแพงแสน จ.นครปฐม";
+			$_SESSION["phone"]="123-456789";
+			$_SESSION["start"]="1";
 		}
+		
 		?>
 		<style>
 			.center {
@@ -101,19 +127,33 @@
 													<br>
 													<label for="fname">จำนวนเสื้อยืด: <?php echo $quantity; ?></label>
 													<br>
+													<label for="fname">ตำแหน่งภาพห่างจากบน (นิ้ว): <?php echo $_SESSION["w"]; ?></label>
+													<br>
+													<label for="fname">ตำแหน่งภาพห่างจากล่าง (นิ้ว): <?php echo $_SESSION["s"]; ?></label>
+													<br>
+													<label for="fname">ตำแหน่งภาพห่างจากซ้าย (นิ้ว): <?php echo $_SESSION["a"]; ?></label>
+													<br>
+													<label for="fname">ตำแหน่งภาพห่างจากขวา (นิ้ว): <?php echo $_SESSION["d"]; ?></label>
+													<br>
+													<label for="fname">ขนาดภาพกว้าง (นิ้ว): <?php echo $_SESSION["wide"]; ?></label>
+													<br>
+													<label for="fname">ขนาดภาพยาว (นิ้ว): <?php echo $_SESSION["long"]; ?></label>
+													<br>
 													<label for="lname">สีที่จะใช้สกรีน: </label><div class="col-6 col-12-xsmall">
 														<div class="center"></div>
 													</div>
 													<br>
 													<!-- <input type="text" id="addr" name="addr" value="12 nowhere"><br> -->
 													<?php $date=date('d/m/Y',strtotime($date . "+3 days")); 
+													$_SESSION["date"]=$date;
+													$_SESSION["date1"]=date('d/m/Y');
 													if($number == 1){ ?>
 													<label for="fname">ราคารวม: <?php echo $price; ?> บาท</label>
 													<input type="hidden" name="price" value="<?php echo $price; ?>"></input>
 													<label for="lname">ค่ามัดจำ 40% คิดเป็น: <?php echo $deposit; ?> บาท</label>
 													<input type="hidden" name="deposit" value="<?php echo $deposit; ?>"></input>
 													
-													<a href="indexLoginIsTrue.html" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก')" class="button primary">ยกเลิก</a>
+													<a href="order.php" onclick="return confirm('คุณต้องการลบข้อมูลที่เลือก')" class="button primary">แก้ไข</a>
 													<input type="submit" class="button secondary" value="ชำระเงิน"></input>
 													<?php }else if($number == 2){?>
 														<label for="fname">ราคารวม: แอดมินกำลังประเมินราคา</label>
@@ -122,11 +162,7 @@
 													
 													<!-- <a href="purchase.html" class="button secondary">ชำระเงินคงเหลือ</a> -->
 													<br><br>
-													<label for="lname">สถานะการชำระเงินมัดจำ: <span style="color:red">ยังไม่ชำระ</span></label>
-													<label for="lname">สถานะการชำระเงินคงเหลือ: <span style="color:rgb(0, 0, 0)">-</span></label>
-													<label for="lname">บริการขนส่งโดย: -</label>
-													<label for="lname">หมายเลขรหัสพัสดุ: -</label>
-													<!-- <input type="submit" value="Submit"> -->
+													
 												</form>
 
 												

@@ -99,6 +99,9 @@ function slider5(){
   overflow: hidden;
   background-color: white;
 }
+	.color{
+		
+	}
 
 /* Modal Content */
 
@@ -123,26 +126,13 @@ function slider5(){
 									<!-- <a href="index.html" class="logo"><strong>ยินดีต้อนรับ</strong> by HTML5 UP</a> -->
 									<p>ยินดีต้อนรับ คุณ admin</p>
 									<ul class="icons">
-										<!-- <li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li> -->
+										
 										<li><a href="profile.html" class="logo">แก้ไขข้อมูลส่วนตัว</a></li>
 										<li><a href="index.html" class="logo">logout</a></li>
 									</ul>
 									<!-- <i class="fa fa-user-circle" aria-hidden="true"></i> -->
 								</header>
-								<!-- <header id="header">
-									<a href="index.html" class="logo"><strong>Editorial</strong> by HTML5 UP</a>
-									<ul class="icons">
-										<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-snapchat-ghost"><span class="label">Snapchat</span></a></li>
-										<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-										<li><a href="#" class="icon brands fa-medium-m"><span class="label">Medium</span></a></li>
-									</ul>
-								</header> -->							
+							
 									<form method="post" action="checkorder_1.php" enctype="multipart/form-data">
 							<!-- Content -->
 								<section>
@@ -157,45 +147,44 @@ function slider5(){
 												<div id="display_image"></div><br>
 												<!-- <span>*กรุณาเลือกลายรูป*</span><br><br> -->
 												<input type="file" id="image_input" name="logofile" accept="image/png, image/jpeg">
-												
 											</div><br><br>
 											<div class="col-6 col-12-xsmall">
 													<h5 id="content">ตำแหน่งภาพห่างจากบน (นิ้ว)</h5>
 													<div class="slider-container">
 														<div class="value-container">
-													<span id="demo">0</span></div> 
-													<input type="range" id="myRange" class="slider" value="0" name="points" min="0" max="100" step="10" oninput = "slider()">
+													<span id="demo">2</span></div> 
+													<input type="range" id="myRange" class="slider" value="0" name="points1" min="2" max="100" step="1" oninput = "slider()">
 													</div>
 												</div>
 												<h5 id="content">ตำแหน่งภาพห่างจากล่าง (นิ้ว)</h5>
 												<div class="slider-container">
 														<div class="value-container">
-													<span id="demo1">0</span></div> 
-													<input type="range" id="myRange1" class="slider" value="0" name="points" min="0" max="100" step="10" oninput = "slider1()">
+													<span id="demo1">2</span></div> 
+													<input type="range" id="myRange1" class="slider" value="0" name="points2" min="2" max="100" step="10" oninput = "slider1()">
 													</div>
 												<h5 id="content">ตำแหน่งภาพห่างจากซ้าย (นิ้ว)</h5>
 												<div class="slider-container">
 														<div class="value-container">
-													<span id="demo2">0</span></div> 
-													<input type="range" id="myRange2" class="slider" value="0" name="points" min="0" max="100" step="10" oninput = "slider2()">
+													<span id="demo2">2</span></div> 
+													<input type="range" id="myRange2" class="slider" value="0" name="points3" min="2" max="100" step="10" oninput = "slider2()">
 													</div>
 												<h5 id="content">ตำแหน่งภาพห่างจากขวา (นิ้ว)</h5>
 												<div class="slider-container">
 														<div class="value-container">
-													<span id="demo3">0</span></div> 
-													<input type="range" id="myRange3" class="slider" value="0" name="points" min="0" max="100" step="10" oninput = "slider3()">
+													<span id="demo3">2</span></div> 
+													<input type="range" id="myRange3" class="slider" value="0" name="points4" min="2" max="100" step="10" oninput = "slider3()">
 													</div>
 												<h5 id="content">ขนาดภาพกว้าง (นิ้ว)</h5>
 												<div class="col-6 col-12-xsmall">
 												<div class="value-container">
 													<span id="demo4">0</span></div> 
-													<input type="range" id="myRange4" class="slider" value="0" name="points" min="0" max="100" step="1" oninput = "slider4()">
+													<input type="range" id="myRange4" class="slider" value="0" name="long" min="0" max="100" step="1" oninput = "slider4()">
 												</div>
 												<h5 id="content">ขนาดภาพยาว (นิ้ว)</h5>
 												<div class="col-6 col-12-xsmall">
 												<div class="value-container">
 													<span id="demo5">0</span></div> 
-													<input type="range" id="myRange5" class="slider" value="0" name="points" min="0" max="100" step="1" oninput = "slider5()">
+													<input type="range" id="myRange5" class="slider" value="0" name="wide" min="0" max="100" step="1" oninput = "slider5()">
 												</div>
 											</div>
 										
@@ -204,24 +193,7 @@ function slider5(){
 
 													
 														<div class="row gtr-uniform">
-															<!-- <div class="col-6 col-12-xsmall">
-																<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-															</div>
-															<div class="col-6 col-12-xsmall">
-																<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-															</div> -->
-															<!-- Break -->
-															<!-- <div class="col-12">
-																<select name="demo-category" id="demo-category">
-																	<option value="">- Category -</option>
-																	<option value="1">Manufacturing</option>
-																	<option value="1">Shipping</option>
-																	<option value="1">Administration</option>
-																	<option value="1">Human Resources</option>
-																</select>
-															</div> -->
-															<!-- Break -->
-															
+
 															<div class="col-12 col-12-small">
 																<h4>ตารางขนาดของเสื้อยืด</h4>
 															</div>
@@ -431,52 +403,10 @@ function slider5(){
 																<button type="submit" class="button secondary" name="action" value="check">ยืนยันการสั่ง</input>
 																
 															</div>
-															
-															<!-- Break -->
-															<!-- <div class="col-4 col-12-small">
-																<input type="checkbox" id="demo-copy" name="demo-copy">
-																<label for="demo-copy">checkbox1</label>
-															</div>
-															<div class="col-4 col-12-small">
-																<input type="checkbox" id="demo-human" name="demo-human">
-																<label for="demo-human">checkbox2</label>
-															</div>
-															<div class="col-4 col-12-small">
-																<input type="checkbox" id="demo-error" name="demo-error">
-																<label for="demo-error">checkbox3</label>
-															</div> -->
-															<!-- Break -->
-															<!-- <div class="col-12">
-																<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-															</div> -->
-															<!-- Break -->
-															<!-- <div class="col-12">
-																<ul class="actions">
-																	<li><input type="submit" value="Send Message" class="primary" /></li>
-																	<li><input type="reset" value="Reset" /></li>
-																</ul>
-															</div> -->
+
 														</div>
 													</form>
 										</div>
-
-									<!-- <span class="image main"><img src="images/pic11.jpg" alt="" /></span>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-									<hr class="major" />
-									<h2>Interdum sed dapibus</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-									<hr class="major" />
-									<h2>Magna etiam veroeros</h2>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p>
-									<p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
-									<hr class="major" />
-									<h2>Lorem aliquam bibendum</h2>
-									<p>Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris. Curabitur sapien risus, commodo eget turpis at, elementum convallis elit. Pellentesque enim turpis, hendrerit.</p>
-									<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Etiam tristique libero eu nibh porttitor fermentum. Nullam venenatis erat id vehicula viverra. Nunc ultrices eros ut ultricies condimentum. Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in lectus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. In non lorem sit amet elit placerat maximus. Pellentesque aliquam maximus risus, vel sed vehicula.</p> -->
-
 								</section>
 
 						</div>
@@ -485,15 +415,6 @@ function slider5(){
 				<!-- Sidebar -->
 					<div id="sidebar">
 						<div class="inner">
-
-							<!-- Search -->
-								<!-- <section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section> -->
-
-							<!-- Menu -->
 							<nav id="menu">
 								<header class="major">
 									<h2>Menu</h2>
@@ -502,64 +423,11 @@ function slider5(){
 									<li><a href="indexLoginIsTrue.html">หน้าหลัก</a></li>
 									<li><a href="order.php">การสั่งสกรีนเสื้อผ้า</a></li>
 									<li><a href="shopping.php">การซื้อของฉัน</a></li>
-									<!-- <li>
-										<span class="opener">Submenu</span>
-										<ul>
-											<li><a href="#">Lorem Dolor</a></li>
-											<li><a href="#">Ipsum Adipiscing</a></li>
-											<li><a href="#">Tempus Magna</a></li>
-											<li><a href="#">Feugiat Veroeros</a></li>
-										</ul>
-									</li> -->
-
-									<!-- <li><a href="#">Adipiscing</a></li> -->
-									<!-- <li>
-										<span class="opener">Another Submenu</span>
-										<ul>
-											<li><a href="#">Lorem Dolor</a></li>
-											<li><a href="#">Ipsum Adipiscing</a></li>
-											<li><a href="#">Tempus Magna</a></li>
-											<li><a href="#">Feugiat Veroeros</a></li>
-										</ul>
-									</li> -->
-									<!-- <li><a href="#">Maximus Erat</a></li> -->
-									<!-- <li><a href="#">Sapien Mauris</a></li> -->
-
 									<li><a href="contact.html">ติดต่อเรา</a></li>
 								</ul>
 							</nav>
-
-						<!-- Section -->
-							<!-- <section>
-								<header class="major">
-									<h2>Ante interdum</h2>
-								</header>
-								<div class="mini-posts">
-									<article>
-										<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
-										<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-									</article>
-									<article>
-										<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
-										<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-									</article>
-									<article>
-										<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
-										<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
-									</article>
-								</div>
-								<ul class="actions">
-									<li><a href="#" class="button">More</a></li>
-								</ul>
-							</section> -->
-
-						<!-- Section -->
 							<section>
-								<!-- <header class="major">
-									<h2>Get in touch</h2>
-								</header>
-								<p>Sed varius enim lorem ullamcorper dolore aliquam aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin sed aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p> -->
-								<ul class="contact">
+							<ul class="contact">
 									<li class="icon solid fa-envelope"><a href="#">abc@gmail.com</a></li>
 									<li class="icon solid fa-phone">(000) 000-0000</li>
 									<li class="icon solid fa-home">1234 Somewhere Road #8254<br />

@@ -10,17 +10,23 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="/lib/w3.css">
+		
 		
 		<?php
+		session_start();
+		$logo = $_SESSION["screenPicture"];
 		@ini_set('display_errors', '0');
-		if($_POST){
-			$price = $_POST['price'];
-			$deposit = $_POST['deposit'];
-			echo '<script type="text/javascript">';
-			echo "var price = '$price';";
-			echo "var deposit = '$deposit';";
-			echo '</script>';
-		}
+		$mf = $_POST['mf'];
+		$bill = $_POST['bill'];
+		$fix = $_POST['fix'];
+		$message = $_POST['message'];
+		$_SESSION["bill"] = $bill;
+		$_SESSION["fix"] = $fix;
+		$_SESSION["message"] = $message;
+		$_SESSION["mf"] = $mf;
+		
+		$status=$_SESSION["option"];
 		?>
 		<script type="text/javascript">function toMudjum(){
     document.getElementById("money123").innerHTML = deposit;
@@ -40,6 +46,39 @@ function toFull(){
   overflow: hidden;
   background-color: white;
 }
+body{
+    background-size: cover;
+    background-position: center;
+}
+.progress img{
+    width: 1px;
+}
+.a{
+    text-align: center;
+}
+.b{
+    display: inline-block;
+	
+    width: 37px;
+
+}
+.c{
+	
+	display: inline-block;
+	background: #ccc;
+    width: 40px;
+	height: 40px;
+	color: red;
+	border-radius: 50%;
+}
+.d{
+	display: inline-block;
+	background: blue;
+    width: 40px;
+	height: 40px;
+	color: red;
+	border-radius: 50%;
+}
 
 /* Modal Content */
 
@@ -48,6 +87,7 @@ function toFull(){
 
 
 </style>
+
 	</head>
 	<body class="is-preload">
 
@@ -71,10 +111,13 @@ function toFull(){
 							<!-- Banner -->
 							<section>
 										<div class="col-12 col-12-small">
+										
 																<h4>การซื้อของฉัน</h4>
 															</div>
 															<div class="col-10 col-12-small">
 															<div class="table-wrapper">
+															<div class="w3-container">
+															<?php echo $_SESSION["bill"]; ?>
 																<table class="alt">
 																	<thead>
 																		<tr>
@@ -88,13 +131,57 @@ function toFull(){
 																		</tr>
 																	</thead>
 																	<tbody>
+																		
 																		<tr>
-																			<td><a href="checkorder_1.php"><img class="modal" src="images/logo-design-nepal.png" alt="" /></a></td>
-																			<td><a href="checkorder_1.php">ตรวจสอบสินค้า</a></td>
+																			<td><a href="checkorder_2.php"><img class="modal" src="<?php echo "$logo" ?>" alt="" /></a></td>
+																			<td><a href="checkorder_2.php">ตรวจสอบสินค้า</a></td>
 																			<td><a href="purchase_1.php">ชำระเงิน</a></td>
 																			<td><a href="simple.php">ตัวอย่างสินค้า</a></td>
 																			<td>500</a></td>
-																			<td>กำลังผลิต</a></td>
+																			<td><ul class="a">
+																				<li class="b" >
+																					<?php if($status >= 1){ ?>
+																						<i class="d" title="กำลังประเมินราคา"></i>
+																					<?php } else {?>
+																						<i class="c" title="กำลังประเมินราคา"></i>
+																					<?php }?>
+																				</li>
+																				<li class="b">
+																				<?php if($status >= 2){ ?>
+																						<i class="d" title="รอชำระเงินมัดจำ/เต็มจำนวน"></i>
+																				<?php } else {?>
+																						<i class="c" title="รอชำระเงินมัดจำ/เต็มจำนวน"></i>
+																				<?php }?>
+																				</li>
+																				<li class="b">
+																				<?php if($status >= 3){ ?>
+																						<i class="d" title="รอการชำระเงินส่วนที่เหลือ"></i>
+																				<?php } else {?>
+																						<i class="c" title="รอการชำระเงินส่วนที่เหลือ"></i>
+																				<?php }?>
+																				</li>
+																				<li class="b">
+																				<?php if($status >= 4){ ?>
+																						<i class="d" title="กำลังผลิต"></i>
+																				<?php } else {?>
+																						<i class="c" title="กำลังผลิต"></i>
+																				<?php }?>
+																				</li>
+																				<li class="b">
+																				<?php if($status >= 5){ ?>
+																						<i class="d" title="กำลังจัดส่งสินค้า"></i>
+																				<?php } else {?>
+																						<i class="c" title="กำลังจัดส่งสินค้า"></i>
+																				<?php }?>
+																				</li>
+																				<li class="b">
+																				<?php if($status >= 6){ ?>
+																						<i class="d" title="จัดส่งสินค้าสำเร็จ"></i>
+																				<?php } else {?>
+																						<i class="c" title="จัดส่งสินค้าสำเร็จ"></i>
+																				<?php }?>
+																				</li>
+																			</ul></a></td>
 																		</tr>
 																		<tr>
 																		<td><a href="checkorder_2.php"><img class="modal" src="images/foxx.jpg" alt="" /></a></td>
@@ -102,12 +189,59 @@ function toFull(){
 																			<td><a href="purchase_1.php">ชำระเงิน</a></td>
 																			<td><a href="simple.php">ตัวอย่างสินค้า</a></td>
 																			<td>1000</a></td>
-																			<td>กำลังจัดส่ง</a></td>
+																			<td><ul class="a">
+																				<li class="b" title="กำลังประเมินราคา">																	
+																						<i class="d"></i>																	
+																				</li>
+																				<li class="b" title="รอชำระเงินมัดจำ/เต็มจำนวน">																	
+																						<i class="d"></i>																	
+																				</li>
+																				<li class="b" title="รอการชำระเงินส่วนที่เหลือ">																		
+																						<i class="d"></i>																		
+																				</li>
+																				<li class="b" title="กำลังผลิต">																		
+																						<i class="d"></i>																		
+																				</li>
+																				<li class="b" title="กำลังจัดส่งสินค้า">																		
+																						<i class="d"></i>																			
+																				</li>
+																				<li class="b" title="จัดส่งสินค้าสำเร็จ">																			
+																						<i class="c"></i>
+																				</li>
+																			</ul></td>
 																		</tr>
-																		
+																		<tr>
+																		<td><a href="checkorder_1.php"><img class="modal" src="images/logo-design-nepal.png" alt="" /></a></td>
+																			<td><a href="checkorder_1.php">ตรวจสอบสินค้า</a></td>
+																			<td><a href="purchase_1.php">ชำระเงิน</a></td>
+																			<td><a href="simple.php">ตัวอย่างสินค้า</a></td>
+																			<td>500</a></td>
+																			<td><ul class="a">
+																				<li class="b" title="กำลังประเมินราคา">																				
+																						<i class="d"></i>																				
+																				</li>
+																				<li class="b" title="รอชำระเงินมัดจำ/เต็มจำนวน">																				
+																						<i class="d"></i>																				
+																				</li>
+																				<li class="b" title="รอการชำระเงินส่วนที่เหลือ">																				
+																						<i class="c"></i>																		
+																				</li>
+																				<li class="b" title="กำลังผลิต">																				
+																						<i class="c"></i>																				
+																				</li>
+																				<li class="b" title="กำลังจัดส่งสินค้า">																				
+																						<i class="c"></i>																				
+																				</li>
+																				<li class="b" title="จัดส่งสินค้าสำเร็จ">
+																						<i class="c"></i>	
+																				</li>
+																			</ul></td>
+																		</tr>
 																	</tbody>
 																	
 																</table>
+																
+
 															</div>
 															</div>
 
