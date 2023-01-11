@@ -68,18 +68,32 @@ body{
 	background: #ccc;
     width: 40px;
 	height: 40px;
-	color: red;
+	color: black;
 	border-radius: 50%;
+	padding-top: 9px;
+	padding-right: 1px;
+	
+	font: 1.5em sans-serif;
 }
 .d{
 	display: inline-block;
-	background: blue;
+	background: #3DBEFE;
     width: 40px;
 	height: 40px;
-	color: red;
+	color: white;
 	border-radius: 50%;
+	padding-top: 9px;
+	padding-right: 1px;
+	 
+	font: 1.5em sans-serif;
 }
-
+td{
+	margin: auto;
+}
+h5{
+	font-size: 50px;
+	font: 1.5em sans-serif;
+}
 /* Modal Content */
 
 
@@ -141,44 +155,44 @@ body{
 																			<td><ul class="a">
 																				<li class="b" >
 																					<?php if($status >= 1){ ?>
-																						<i class="d" title="กำลังประเมินราคา"></i>
+																						<i class="d" title="กำลังประเมินราคา">1</i>
 																					<?php } else {?>
-																						<i class="c" title="กำลังประเมินราคา"></i>
+																						<i class="c" title="กำลังประเมินราคา">1</i>
 																					<?php }?>
 																				</li>
 																				<li class="b">
 																				<?php if($status >= 2){ ?>
-																						<i class="d" title="รอชำระเงินมัดจำ/เต็มจำนวน"></i>
+																						<i class="d" title="รอชำระเงินมัดจำ/เต็มจำนวน">2</i>
 																				<?php } else {?>
-																						<i class="c" title="รอชำระเงินมัดจำ/เต็มจำนวน"></i>
+																						<i class="c" title="รอชำระเงินมัดจำ/เต็มจำนวน">2</i>
 																				<?php }?>
 																				</li>
 																				<li class="b">
 																				<?php if($status >= 3){ ?>
-																						<i class="d" title="รอการชำระเงินส่วนที่เหลือ"></i>
+																						<i class="d" title="รอการชำระเงินส่วนที่เหลือ">3</i>
 																				<?php } else {?>
-																						<i class="c" title="รอการชำระเงินส่วนที่เหลือ"></i>
+																						<i class="c" title="รอการชำระเงินส่วนที่เหลือ">3</i>
 																				<?php }?>
 																				</li>
 																				<li class="b">
 																				<?php if($status >= 4){ ?>
-																						<i class="d" title="กำลังผลิต"></i>
+																						<i class="d" title="กำลังผลิต">4</i>
 																				<?php } else {?>
-																						<i class="c" title="กำลังผลิต"></i>
+																						<i class="c" title="กำลังผลิต">4</i>
 																				<?php }?>
 																				</li>
 																				<li class="b">
 																				<?php if($status >= 5){ ?>
-																						<i class="d" title="กำลังจัดส่งสินค้า"></i>
+																						<i class="d" title="กำลังจัดส่งสินค้า">5</i>
 																				<?php } else {?>
-																						<i class="c" title="กำลังจัดส่งสินค้า"></i>
+																						<i class="c" title="กำลังจัดส่งสินค้า">5</i>
 																				<?php }?>
 																				</li>
 																				<li class="b">
 																				<?php if($status >= 6){ ?>
-																						<i class="d" title="จัดส่งสินค้าสำเร็จ"></i>
+																						<i class="d" title="จัดส่งสินค้าสำเร็จ">6</i>
 																				<?php } else {?>
-																						<i class="c" title="จัดส่งสินค้าสำเร็จ"></i>
+																						<i class="c" title="จัดส่งสินค้าสำเร็จ">6</i>
 																				<?php }?>
 																				</li>
 																			</ul></a></td>
@@ -191,22 +205,22 @@ body{
 																			<td>1000</a></td>
 																			<td><ul class="a">
 																				<li class="b" title="กำลังประเมินราคา">																	
-																						<i class="d"></i>																	
+																						<i class="d">1</i>																	
 																				</li>
 																				<li class="b" title="รอชำระเงินมัดจำ/เต็มจำนวน">																	
-																						<i class="d"></i>																	
+																						<i class="d">2</i>																	
 																				</li>
 																				<li class="b" title="รอการชำระเงินส่วนที่เหลือ">																		
-																						<i class="d"></i>																		
+																						<i class="d">3</i>																		
 																				</li>
 																				<li class="b" title="กำลังผลิต">																		
-																						<i class="d"></i>																		
+																						<i class="d">4</i>																		
 																				</li>
 																				<li class="b" title="กำลังจัดส่งสินค้า">																		
-																						<i class="d"></i>																			
+																						<i class="d">5</i>																			
 																				</li>
 																				<li class="b" title="จัดส่งสินค้าสำเร็จ">																			
-																						<i class="c"></i>
+																						<i class="c">6</i>
 																				</li>
 																			</ul></td>
 																		</tr>
@@ -218,29 +232,34 @@ body{
 																			<td>500</a></td>
 																			<td><ul class="a">
 																				<li class="b" title="กำลังประเมินราคา">																				
-																						<i class="d"></i>																				
+																						<i class="d">1</i>																				
 																				</li>
 																				<li class="b" title="รอชำระเงินมัดจำ/เต็มจำนวน">																				
-																						<i class="d"></i>																				
+																						<i class="d">2</i>																				
 																				</li>
 																				<li class="b" title="รอการชำระเงินส่วนที่เหลือ">																				
-																						<i class="c"></i>																		
+																						<i class="c">3</i>																		
 																				</li>
 																				<li class="b" title="กำลังผลิต">																				
-																						<i class="c"></i>																				
+																						<i class="c">4</i>																				
 																				</li>
 																				<li class="b" title="กำลังจัดส่งสินค้า">																				
-																						<i class="c"></i>																				
+																						<i class="c">5</i>																				
 																				</li>
 																				<li class="b" title="จัดส่งสินค้าสำเร็จ">
-																						<i class="c"></i>	
+																						<i class="c">6</i>	
 																				</li>
 																			</ul></td>
 																		</tr>
 																	</tbody>
 																	
 																</table>
-																
+																<p>1 กำลังประเมินราคา</p>
+																<p>2 รอชำระเงินมัดจำ/เต็มจำนวน</p>
+																<p>3 รอการชำระเงินส่วนที่เหลือ</p>
+																<p>4 กำลังผลิต</p>
+																<p>5 กำลังจัดส่งสินค้า</p>
+																<p>6 จัดส่งสินค้าสำเร็จ</p>
 
 															</div>
 															</div>
