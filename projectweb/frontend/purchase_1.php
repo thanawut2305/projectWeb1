@@ -22,8 +22,9 @@
 		//	echo "var deposit = '$deposit';";
 		//	echo '</script>';
 		//}
-		$price = $_SESSION["price"];
-		$deposit = $_SESSION["deposit"];
+		$price = $_SESSION["sum"];
+		$deposit = $price*40/100;
+		$_SESSION["deposit"] = $deposit;
 		echo '<script type="text/javascript">';
 			echo "var price = '$price';";
 			echo "var deposit = '$deposit';";

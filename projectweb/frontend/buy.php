@@ -6,8 +6,66 @@
 -->
 <html>
 	<head>
-	<!-- <?php session_start(); 
-	$_SESSION['color'] = 0;?> -->
+	<?php
+		@ini_set('display_errors', '0');
+		$asd = serialize($_POST['demo-priority']);
+		if($_FILES){
+			session_start(); 
+			$logo = $_FILES['logofile'];
+			$dir = "images/";
+			$logo = $dir . basename($_FILES['logofile']['name']);
+			move_uploaded_file($_FILES['logofile']['tmp_name'],$logo);
+			$_SESSION["screenPicture"]=$logo;
+		}
+		if($_POST){
+			$option = explode(",", $_POST['demo-priority1']);
+			$color = $option[0];
+			$color_name = $option[1];
+			$size = $_POST['demo-priority'];
+			$quantity = $_POST['quantity'];
+			$colorRGB = $_POST['colorRGB'];
+			$w = $_POST['points1'];
+			$s = $_POST['points2'];
+			$a = $_POST['points3'];
+			$d = $_POST['points4'];
+			$wide = $_POST['wide'];
+			$long = $_POST['long'];
+			$number = $_POST['number'];
+			$price = $quantity*10;
+			if($wide>=8.3&&$wide<11.7){
+				if($long>=11.7&&$long<16.5){
+					$price = 150+$price;
+				}
+			}elseif($wide>=11.7&&$wide<16.5){
+				if($long>=16.5&&$long<23.4){
+					$price = 250+$price;
+				}
+			}else{
+					$price = 350+$price;
+			}
+			$deposit = $price*40/100;
+			$_SESSION["color"]=$color;
+			$_SESSION["color_name"]=$color_name;
+			$_SESSION["quantity"]=$quantity;
+			$_SESSION["size"]=$size;
+			$_SESSION["number"]=$number;
+			$_SESSION["colorRGB"]=$colorRGB;
+			$_SESSION["price"]=$price;
+			$_SESSION["deposit"]=$deposit;
+			$_SESSION["w"]=$w;
+			$_SESSION["s"]=$s;
+			$_SESSION["a"]=$a;
+			$_SESSION["d"]=$d;
+			$_SESSION["wide"]=$wide;
+			$_SESSION["long"]=$long;
+			$_SESSION["name"]="admin";
+			$_SESSION["fname"]="Smith";
+			$_SESSION["address"]="123 กำแพงแสน จ.นครปฐม";
+			$_SESSION["phone"]="123-456789";
+			$_SESSION["start"]="1";
+		}
+		
+		?>
 		<title>Order | silk_screen</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -126,14 +184,14 @@ function slider5(){
 									<!-- <a href="index.html" class="logo"><strong>ยินดีต้อนรับ</strong> by HTML5 UP</a> -->
 									<p>ยินดีต้อนรับ คุณ admin</p>
 									<ul class="icons">
-										
+										<?php echo $asd; ?>
 										<li><a href="profile.html" class="logo">แก้ไขข้อมูลส่วนตัว</a></li>
 										<li><a href="index.html" class="logo">logout</a></li>
 									</ul>
 									<!-- <i class="fa fa-user-circle" aria-hidden="true"></i> -->
 								</header>
 							
-									<form method="post" action="checkorder_1.php" enctype="multipart/form-data">
+									<form method="post" action="checkorder3.php" enctype="multipart/form-data">
 							<!-- Content -->
 								<section>
 									<!-- <header class="main">
@@ -182,35 +240,35 @@ function slider5(){
 																		
 																			<tr>
 																				<td>จำนวน(ตัว)</td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="quantity[]" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="quantity[]" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="quantity[]" min="1" value="" /></td>
 																			</tr>
 																			
 																				
 																			<tr>
 																				<td>ระยะห่างของลายแบบกับขอบด้านบน</td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="top[]" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="top[]" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="top[]" min="1" value="" /></td>
 																			</tr>
 																			<tr>
 																				<td>ระยะห่างของลายแบบกับขอบด้านล่าง</td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="button[]" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="button[]" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="button[]" min="1" value="" /></td>
 																			</tr>
 																			<tr>
 																				<td>ระยะห่างของลายแบบกับขอบด้านซ้าย</td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="left[]" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="left[]" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="left[]" min="1" value="" /></td>
 																			</tr>
 																			<tr>
 																				<td>ระยะห่างของลายแบบกับขอบด้านขวา</td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="right[]" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="right[]" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="right[]" min="1" value="" /></td>
 																			</tr>
 																			
 																			
@@ -218,11 +276,11 @@ function slider5(){
 																		<tfoot>
 																			<tr>
 																				<td>ขนาดภาพกว้าง</td>	
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>						
+																				<td><input type="number" id="demo-name" name="wide" min="1" value="" /></td>						
 																			</tr>
 																			<tr>
 																				<td>ขนาดภาพยาว</td>
-																				<td><input type="number" id="demo-name" name="quantity" min="1" value="" /></td>
+																				<td><input type="number" id="demo-name" name="long" min="1" value="" /></td>
 																			</tr>
 																		</tfoot>
 																	
@@ -257,7 +315,7 @@ function slider5(){
 																<input type="button" class="button primary" value="ยกเลิก"></input>
 																
 																<button type="submit" class="button secondary" name="action" value="check">ยืนยันการสั่ง</button>
-																<a href="checkorder3.html">ดำเนินการสั่งทำ</a>
+																
 																
 															</div>
 

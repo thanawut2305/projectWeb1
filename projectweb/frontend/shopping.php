@@ -147,8 +147,8 @@ h5{
 																	<tbody>
 																		
 																		<tr>
-																			<td><a href="checkorder_2.php"><img class="modal" src="<?php echo "$logo" ?>" alt="" /></a></td>
-																			<td><a href="checkorder_2.php">ตรวจสอบสินค้า</a></td>
+																			<td><a href="checkorder3.php"><img class="modal" src="<?php echo "$logo" ?>" alt="" /></a></td>
+																			<td><a href="checkorder3.php">ตรวจสอบสินค้า</a></td>
 																			<td><a href="purchase_1.php">ชำระเงิน</a></td>
 																			<td><a href="simple.php">ตัวอย่างสินค้า</a></td>
 																			<td>500</a></td>
@@ -198,8 +198,8 @@ h5{
 																			</ul></a></td>
 																		</tr>
 																		<tr>
-																		<td><a href="checkorder_2.php"><img class="modal" src="images/foxx.jpg" alt="" /></a></td>
-																			<td><a href="checkorder_2.php">ตรวจสอบสินค้า</a></td>
+																		<td><a href="checkorder3.php"><img class="modal" src="images/foxx.jpg" alt="" /></a></td>
+																			<td><a href="checkorder3.php">ตรวจสอบสินค้า</a></td>
 																			<td><a href="purchase_1.php">ชำระเงิน</a></td>
 																			<td><a href="simple.php">ตัวอย่างสินค้า</a></td>
 																			<td>1000</a></td>

@@ -133,7 +133,7 @@ function slider5(){
 									<!-- <i class="fa fa-user-circle" aria-hidden="true"></i> -->
 								</header>
 							
-									<form method="post" action="checkorder_1.php" enctype="multipart/form-data">
+									<form method="post" action="buy.php" enctype="multipart/form-data">
 							<!-- Content -->
 								<section>
 									<!-- <header class="main">
@@ -164,27 +164,27 @@ function slider5(){
 											<h3 id="content">ไซส์เสื้อยืด</h3>
 											<div class="row gtr-200">
 												<div class="col-3 col-12-small">
-													<input type="checkbox" id="demo-priority-low" name="demo-priority" value="S">
+													<input type="checkbox" id="demo-priority-low" name="demo-priority[]" value="S">
 													<label for="demo-priority-low">S</label>
 												</div>
 												<div class="col-3 col-12-small">
-													<input type="checkbox" id="demo-priority-normal" name="demo-priority" value="M">
+													<input type="checkbox" id="demo-priority-normal" name="demo-priority[]" value="M">
 													<label for="demo-priority-normal">M</label>
 												</div>
 												<div class="col-4 col-12-small">
-													<input type="checkbox" id="demo-priority-high" name="demo-priority" value="L">
+													<input type="checkbox" id="demo-priority-high" name="demo-priority[]" value="L">
 													<label for="demo-priority-high">L</label>
 												</div>
 												<div class="col-3 col-12-small">
-													<input type="checkbox" id="demo-priority-low1" name="demo-priority" value="XL">
+													<input type="checkbox" id="demo-priority-low1" name="demo-priority[]" value="XL">
 													<label for="demo-priority-low1">XL</label>
 												</div>
 												<div class="col-3 col-12-small">
-													<input type="checkbox" id="demo-priority-normal1" name="demo-priority" value="XXL">
+													<input type="checkbox" id="demo-priority-normal1" name="demo-priority[]" value="XXL">
 													<label for="demo-priority-normal1">XXL</label>
 												</div>
 												<div class="col-3 col-12-small">
-													<input type="checkbox" id="demo-priority-high1" name="demo-priority" value="XXXL">
+													<input type="checkbox" id="demo-priority-high1" name="demo-priority[]" value="XXXL">
 													<label for="demo-priority-high1">XXXL</label>
 												</div>
 											</div>
@@ -325,7 +325,6 @@ function slider5(){
 																<label for="demo-priority-high1">XXXL</label>
 															</div> -->
 															
-															<a href="buy.html">next</a>
 
 															<!-- color T-shirt -->
 															<h3 id="content">สีเสื้อยืด</h3>

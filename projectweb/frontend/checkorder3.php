@@ -6,8 +6,56 @@
 -->
 <html>
 	<head>
-	<!-- <?php session_start(); 
-	$_SESSION['color'] = 0;?> -->
+	<?php
+		@ini_set('display_errors', '0');
+		session_start();
+		 
+		if($_POST){
+			$quantity = $_POST['quantity'];
+			$colorRGB = $_POST['colorRGB'];
+			$w = $_POST['top'];
+			$s = $_POST['button'];
+			$a = $_POST['left'];
+			$d = $_POST['right'];
+			$wide = $_POST['wide'];
+			$long = $_POST['long'];
+			$sum = 0;
+			for($i=0;$i<3;$i++){
+			$price[$i] = $quantity[$i]*10;
+			if($wide>=8.3&&$wide<11.7){
+				if($long>=11.7&&$long<16.5){
+					$price[$i] = 150+$price[$i];
+				}
+			}elseif($wide>=11.7&&$wide<16.5){
+				if($long>=16.5&&$long<23.4){
+					$price[$i] = 250+$price[$i];
+				}
+			}else{
+					$price[$i] = 350+$price[$i];
+			}
+			$deposit[$i] = $price[$i]*40/100;
+			$sum = $sum+$price[$i];
+		}
+			$_SESSION["quantity"]=$quantity;
+			$_SESSION["sum"]=$sum;
+			
+			$_SESSION["colorRGB"]=$colorRGB;
+			$_SESSION["price"]=$price;
+			$_SESSION["deposit"]=$deposit;
+			$_SESSION["w"]=$w;
+			$_SESSION["s"]=$s;
+			$_SESSION["a"]=$a;
+			$_SESSION["d"]=$d;
+			$_SESSION["wide"]=$wide;
+			$_SESSION["long"]=$long;
+			$_SESSION["name"]="admin";
+			$_SESSION["fname"]="Smith";
+			$_SESSION["address"]="123 กำแพงแสน จ.นครปฐม";
+			$_SESSION["phone"]="123-456789";
+			$_SESSION["start"]="1";
+		}
+		 
+		?>
 		<title>Order | silk_screen</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -133,7 +181,7 @@ function slider5(){
 									<!-- <i class="fa fa-user-circle" aria-hidden="true"></i> -->
 								</header>
 							
-									<form method="post" action="checkorder_1.php" enctype="multipart/form-data">
+									<form method="post" action="purchase_1.php" enctype="multipart/form-data">
 							<!-- Content -->
 								<section>
 									<header class="main">
@@ -145,7 +193,7 @@ function slider5(){
 											<div id="boxCenter">
 												<div class="displayShirt">												
 													<p><strong>ภาพที่จะใช้สกรีน</strong></p>
-													<div class="img-resize"><span><img src="">" alt="" /></span></div>
+													<div class="img-resize"><span><img src="<?php echo $_SESSION["screenPicture"]; ?>"  alt="" /></span></div>
 												</div>
 											</div>	
 										</div>
@@ -154,7 +202,7 @@ function slider5(){
                                             <div id="boxCenter">		
                                                 <div class="displayShirt">
                                                     <p><strong>เสื้อยืดที่เลือก</strong></p>
-                                                        <div class="img-resize"><span><img src="">" alt="" /></span></div><br>
+                                                        <div class="img-resize"><span><img src="<?php echo $_SESSION["color"]; ?>"  alt="" /></span></div><br>
                                                 </div>
                                             </div>			
                                         </div>
@@ -187,51 +235,51 @@ function slider5(){
 																		
 																			<tr>
 																				<td>จำนวน(ตัว)</td>
-																				<td>100</td>
-																				<td>200</td>
-																				<td>300</td>
+																				<td><?php echo $_SESSION["quantity"][0]; ?></td>
+																				<td><?php echo $_SESSION["quantity"][1]; ?></td>
+																				<td><?php echo $_SESSION["quantity"][2]; ?></td>
 																			</tr>
 																			
 																				
 																			<tr>
 																				<td>ระยะห่างของลายแบบกับขอบด้านบน(นิ้ว)</td>
-																				<td>2.0</td>
-																				<td>2.0</td>
-																				<td>2.0</td>
+																				<td><?php echo $_SESSION["w"][0]; ?></td>
+																				<td><?php echo $_SESSION["w"][1]; ?></td>
+																				<td><?php echo $_SESSION["w"][2]; ?></td>
 																			</tr>
 																			<tr>
 																				<td>ระยะห่างของลายแบบกับขอบด้านล่าง(นิ้ว)</td>
-																				<td>2.0</td>
-																				<td>2.0</td>
-																				<td>2.0</td>
+																				<td><?php echo $_SESSION["s"][0]; ?></td>
+																				<td><?php echo $_SESSION["s"][1]; ?></td>
+																				<td><?php echo $_SESSION["s"][2]; ?></td>
 																			</tr>
 																			<tr>
 																				<td>ระยะห่างของลายแบบกับขอบด้านซ้าย(นิ้ว)</td>
-																				<td>2.0</td>
-																				<td>2.0</td>
-																				<td>2.0</td>
+																				<td><?php echo $_SESSION["a"][0]; ?></td>
+																				<td><?php echo $_SESSION["a"][1]; ?></td>
+																				<td><?php echo $_SESSION["a"][2]; ?></td>
 																			</tr>
 																			<tr>
 																				<td>ระยะห่างของลายแบบกับขอบด้านขวา(นิ้ว)</td>
-																				<td>2.0</td>
-																				<td>2.0</td>
-																				<td>2.0</td>
+																				<td><?php echo $_SESSION["d"][0]; ?></td>
+																				<td><?php echo $_SESSION["d"][1]; ?></td>
+																				<td><?php echo $_SESSION["d"][2]; ?></td>
 																			</tr>
 																			<tr>
 																				<td>ราคาต่อหน่วย(บาท)</td>
-																				<td>5.0</td>
-																				<td>5.0</td>
-																				<td>5.0</td>
+																				<td><?php echo $_SESSION["deposit"][0]; ?></td>
+																				<td><?php echo $_SESSION["deposit"][1]; ?></td>
+																				<td><?php echo $_SESSION["deposit"][2]; ?></td>
 																			</tr>
 																			<tr>
 																				<td>ราคารวม(บาท)</td>
-																				<td>500.0</td>
-																				<td>1000.0</td>
-																				<td>1500.0</td>
+																				<td><?php echo $_SESSION["price"][0]; ?></td>
+																				<td><?php echo $_SESSION["price"][1]; ?></td>
+																				<td><?php echo $_SESSION["price"][2]; ?></td>
 																			</tr>
 																			<tr>
 																				<td colspan="3">ราคาสุทธิ(บาท)</td>
-																				<td>3000.0</td>
+																				<td><?php echo $_SESSION["sum"]; ?></td>
 																				
 																			</tr>
 																			
@@ -250,10 +298,10 @@ function slider5(){
                                                                         </div>
                                                                         <br>
                                                                         <!-- <input type="text" id="addr" name="addr" value="12 nowhere"><br> -->
-                                                                        <label for="fname">ขนาดภาพกว้าง(นิ้ว): 5</label>
-                                                                        <label for="fname">ขนาดภาพยาว(นิ้ว): 7</label>
+                                                                        <label for="fname">ขนาดภาพกว้าง(นิ้ว): <?php echo $_SESSION["wide"]; ?></label>
+                                                                        <label for="fname">ขนาดภาพยาว(นิ้ว): <?php echo $_SESSION["long"]; ?></label>
                                                                         
-                                                                        <a href="purchase.html" class="button secondary">ชำระเงิน</a>
+                                                                         
                                                                         <!-- <a href="purchase.html" class="button secondary">ชำระเงินคงเหลือ</a> -->
                                                                         <label for="lname">สถานะการชำระเงินมัดจำ: <span style="color:red">ยังไม่ชำระ</span></label>
                                                                         <label for="lname">สถานะการชำระเงินคงเหลือ: <span style="color:rgb(0, 0, 0)">-</span></label>
@@ -271,7 +319,7 @@ function slider5(){
 															<div class="col-12 col-12-small">
 																<input type="button" class="button primary" value="ยกเลิก"></input>
 																
-																<button type="submit" class="button secondary" name="action" value="check">ยืนยันการสั่ง</button>
+																<button type="submit" class="button secondary" name="action" value="check">ชำระเงิน</button>
 																<!-- <a href="checkorder3.html">ดำเนินการสั่งทำ</a> -->
 																
 															</div>
