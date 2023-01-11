@@ -1032,7 +1032,7 @@ form.boxOrder{
 form.box2{
   width: fit-content;
   height: fit-content;
-  background-color: #f4f4f7;
+  background-color: #d9d9de;
   border-radius: 15px;
   padding: 60px;
   /* padding-right: 100px; */
@@ -2509,4 +2509,62 @@ div.img-resize2 img {
     /* margin-left: auto;
     margin-right: auto; */
     width: 50%;
+  }
+
+  .tooltip {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+  }
+  
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 150%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+  .tooltip .tooltiptext::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: black transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+
+  .box1{
+    width: 350px;
+    height: 40%;
+    background-color: #cdcdd1;
+    border-radius: 15px;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    /* margin-left: 33%; */
+  }
+  
+  .slider {
+    /* -webkit-appearance: none; */
+    width: 50%;
+    height: 10px;
+    border-radius: 50px;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
   }

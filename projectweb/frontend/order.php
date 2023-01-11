@@ -148,44 +148,87 @@ function slider5(){
 												<!-- <span>*กรุณาเลือกลายรูป*</span><br><br> -->
 												<input type="file" id="image_input" name="logofile" accept="image/png, image/jpeg">
 											</div><br><br>
-											<div class="col-6 col-12-xsmall">
-													<h5 id="content">ตำแหน่งภาพห่างจากบน (นิ้ว)</h5>
+
+											<h3 id="content">จำนวนสี</h3>
+											<div class="row gtr-200">
+												<div class="col-4 col-12-small">
+													<input onclick="color()" type="radio" id="1" name="number" value="1" >
+													<label for="1">1 สี</label>
+												</div>
+												<div class="col-6 col-12-small">
+													<input onclick="morecolor()" type="radio" id="2" name="number" value="2">
+													<label for="2">มากกว่า 1 สี</label>
+												</div>
+											</div>
+
+											<h3 id="content">ไซส์เสื้อยืด</h3>
+											<div class="row gtr-200">
+												<div class="col-3 col-12-small">
+													<input type="checkbox" id="demo-priority-low" name="demo-priority" value="S">
+													<label for="demo-priority-low">S</label>
+												</div>
+												<div class="col-3 col-12-small">
+													<input type="checkbox" id="demo-priority-normal" name="demo-priority" value="M">
+													<label for="demo-priority-normal">M</label>
+												</div>
+												<div class="col-4 col-12-small">
+													<input type="checkbox" id="demo-priority-high" name="demo-priority" value="L">
+													<label for="demo-priority-high">L</label>
+												</div>
+												<div class="col-3 col-12-small">
+													<input type="checkbox" id="demo-priority-low1" name="demo-priority" value="XL">
+													<label for="demo-priority-low1">XL</label>
+												</div>
+												<div class="col-3 col-12-small">
+													<input type="checkbox" id="demo-priority-normal1" name="demo-priority" value="XXL">
+													<label for="demo-priority-normal1">XXL</label>
+												</div>
+												<div class="col-3 col-12-small">
+													<input type="checkbox" id="demo-priority-high1" name="demo-priority" value="XXXL">
+													<label for="demo-priority-high1">XXXL</label>
+												</div>
+											</div>
+											<!-- <div class="box1">
+												<div class="col-6 col-12-xsmall">
+														<h5 id="content">ตำแหน่งภาพห่างจากบน (นิ้ว)</h5>
+														<div class="slider-container">
+															<div class="value-container">
+																<span id="demo">2</span>
+															</div> 
+															<input type="range" id="myRange" class="slider" value="0" name="points1" min="2" max="6" step="0.1" oninput = "slider()">
+														</div>
+													</div>
+													<h5 id="content">ตำแหน่งภาพห่างจากล่าง (นิ้ว)</h5>
 													<div class="slider-container">
-														<div class="value-container">
-													<span id="demo">2</span></div> 
-													<input type="range" id="myRange" class="slider" value="0" name="points1" min="2" max="100" step="1" oninput = "slider()">
+															<div class="value-container">
+														<span id="demo1">2</span></div> 
+														<input type="range" id="myRange1" class="slider" value="0" name="points2" min="2" max="6" step="0.1" oninput = "slider1()">
+														</div>
+													<h5 id="content">ตำแหน่งภาพห่างจากซ้าย (นิ้ว)</h5>
+													<div class="slider-container">
+															<div class="value-container">
+														<span id="demo2">2</span></div> 
+														<input type="range" id="myRange2" class="slider" value="0" name="points3" min="2" max="6" step="0.1" oninput = "slider2()">
+														</div>
+													<h5 id="content">ตำแหน่งภาพห่างจากขวา (นิ้ว)</h5>
+													<div class="slider-container">
+															<div class="value-container">
+														<span id="demo3">2</span></div> 
+														<input type="range" id="myRange3" class="slider" value="0" name="points4" min="2" max="6" step="0.1" oninput = "slider3()">
+														</div>
+													<h5 id="content">ขนาดภาพกว้าง (นิ้ว)</h5>
+													<div class="col-6 col-12-xsmall">
+													<div class="value-container">
+														<span id="demo4">2.5</span></div> 
+														<input type="range" id="myRange4" class="slider" value="0" name="long" min="2.5" max="11.7" step="0.1" oninput = "slider4()">
 													</div>
-												</div>
-												<h5 id="content">ตำแหน่งภาพห่างจากล่าง (นิ้ว)</h5>
-												<div class="slider-container">
-														<div class="value-container">
-													<span id="demo1">2</span></div> 
-													<input type="range" id="myRange1" class="slider" value="0" name="points2" min="2" max="100" step="10" oninput = "slider1()">
+													<h5 id="content">ขนาดภาพยาว (นิ้ว)</h5>
+													<div class="col-6 col-12-xsmall">
+													<div class="value-container">
+														<span id="demo5">2.5</span></div> 
+														<input type="range" id="myRange5" class="slider" value="0" name="wide" min="2.5" max="16.5" step="0.1" oninput = "slider5()">
 													</div>
-												<h5 id="content">ตำแหน่งภาพห่างจากซ้าย (นิ้ว)</h5>
-												<div class="slider-container">
-														<div class="value-container">
-													<span id="demo2">2</span></div> 
-													<input type="range" id="myRange2" class="slider" value="0" name="points3" min="2" max="100" step="10" oninput = "slider2()">
-													</div>
-												<h5 id="content">ตำแหน่งภาพห่างจากขวา (นิ้ว)</h5>
-												<div class="slider-container">
-														<div class="value-container">
-													<span id="demo3">2</span></div> 
-													<input type="range" id="myRange3" class="slider" value="0" name="points4" min="2" max="100" step="10" oninput = "slider3()">
-													</div>
-												<h5 id="content">ขนาดภาพกว้าง (นิ้ว)</h5>
-												<div class="col-6 col-12-xsmall">
-												<div class="value-container">
-													<span id="demo4">0</span></div> 
-													<input type="range" id="myRange4" class="slider" value="0" name="long" min="0" max="100" step="1" oninput = "slider4()">
-												</div>
-												<h5 id="content">ขนาดภาพยาว (นิ้ว)</h5>
-												<div class="col-6 col-12-xsmall">
-												<div class="value-container">
-													<span id="demo5">0</span></div> 
-													<input type="range" id="myRange5" class="slider" value="0" name="wide" min="0" max="100" step="1" oninput = "slider5()">
-												</div>
+												</div> -->
 											</div>
 										
 										<div class="col-6 col-12-medium">
@@ -251,51 +294,39 @@ function slider5(){
 																</div>
 															</div>
 															
-															
-															<h3 id="content">จำนวนสี</h3>
-															<div class="col-4 col-12-small"></div>													
-															<div class="col-4 col-12-small"></div>
-															<div class="col-4 col-12-small">
-																<input onclick="color()" type="radio" id="1" name="number" value="1" >
-																<label for="1">1 สี</label>
-															</div>
-															<div class="col-4 col-12-small">
-																<input onclick="morecolor()" type="radio" id="2" name="number" value="2">
-																<label for="2">มากกว่า 1 สี</label>
-															</div>
-															
-															<div></div><div></div>
 															<!-- size T-shirt -->
-															<h3 id="content">ไซส์เสื้อยืด</h3>
+															<!-- <h3 id="content">ไซส์เสื้อยืด</h3>
 															<div class="col-4 col-12-small">
 															</div>
 															<div class="col-4 col-12-small">
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-low" name="demo-priority" value="S">
+																<input type="checkbox" id="demo-priority-low" name="demo-priority" value="S">
 																<label for="demo-priority-low">S</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-normal" name="demo-priority" value="M">
+																<input type="checkbox" id="demo-priority-normal" name="demo-priority" value="M">
 																<label for="demo-priority-normal">M</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-high" name="demo-priority" value="L">
+																<input type="checkbox" id="demo-priority-high" name="demo-priority" value="L">
 																<label for="demo-priority-high">L</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-low1" name="demo-priority" value="XL">
+																<input type="checkbox" id="demo-priority-low1" name="demo-priority" value="XL">
 																<label for="demo-priority-low1">XL</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-normal1" name="demo-priority" value="XXL">
+																<input type="checkbox" id="demo-priority-normal1" name="demo-priority" value="XXL">
 																<label for="demo-priority-normal1">XXL</label>
 															</div>
 															<div class="col-4 col-12-small">
-																<input type="radio" id="demo-priority-high1" name="demo-priority" value="XXXL">
+																<input type="checkbox" id="demo-priority-high1" name="demo-priority" value="XXXL">
 																<label for="demo-priority-high1">XXXL</label>
-															</div>
+															</div> -->
 															
+															<a href="buy.html">next</a>
+
 															<!-- color T-shirt -->
 															<h3 id="content">สีเสื้อยืด</h3>
 															<div class="col-4 col-12-small"></div>
@@ -377,7 +408,7 @@ function slider5(){
 </div>
 															<div class="col-4 col-12-small"></div>
 															<!-- number of T-shirt -->
-															<h3 id="content">จำนวนเสื้อยืด</h3>
+															<!-- <h3 id="content">จำนวนเสื้อยืด</h3>
 															<div class="col-6 col-12-xsmall">
 																<input type="number" id="demo-name" name="quantity" min="1" value="" />
 															</div>
@@ -396,11 +427,11 @@ function slider5(){
 															</div>
 															<div class="col-6 col-12-xsmall">
 																<input type="hidden" id="colorInputText">
-															</div>
+															</div> -->
 															<div class="col-12 col-12-small">
 																<input type="button" class="button primary" value="ยกเลิก"></input>
 																<input type="hidden" name="controller" value="<span id='color'></span>"/>
-																<button type="submit" class="button secondary" name="action" value="check">ยืนยันการสั่ง</input>
+																<button type="submit" class="button secondary" name="action" value="check">ต่อไป</input>
 																
 															</div>
 
