@@ -302,8 +302,10 @@ function slider5(){
                                                                         <label for="fname">ขนาดภาพยาว(นิ้ว): <?php echo $_SESSION["long"]; ?></label>
                                                                         
                                                                          
-                                                                        <!-- <a href="purchase.html" class="button secondary">ชำระเงินคงเหลือ</a> -->
-                                                                        
+																		<label for="lname">สถานะการชำระเงินมัดจำ: <span style="color:red">ยังไม่ชำระ</span></label>
+                                                                        <label for="lname">สถานะการชำระเงินคงเหลือ: <span style="color:rgb(0, 0, 0)">-</span></label>
+                                                                        <label for="lname">บริการขนส่งโดย: -</label>
+                                                                        <label for="lname">หมายเลขรหัสพัสดุ: -</label>
                                                                     </form>
                                                                 </div> 
 

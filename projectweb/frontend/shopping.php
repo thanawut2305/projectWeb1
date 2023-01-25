@@ -10,8 +10,10 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
-		<link rel="stylesheet" href="/lib/w3.css">
-		
+		 
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+    	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+
 		
 		<?php
 		session_start();
@@ -25,7 +27,7 @@
 		$_SESSION["fix"] = $fix;
 		$_SESSION["message"] = $message;
 		$_SESSION["mf"] = $mf;
-		
+		$_SESSION["date"] = $_POST['date'];
 		$status=$_SESSION["option"];
 		?>
 		<script type="text/javascript">function toMudjum(){
@@ -46,6 +48,7 @@ function toFull(){
   overflow: hidden;
   background-color: white;
 }
+
 body{
     background-size: cover;
     background-position: center;
@@ -72,7 +75,7 @@ body{
 	border-radius: 50%;
 	padding-top: 9px;
 	padding-right: 1px;
-	
+	 
 	font: 1.5em sans-serif;
 }
 .d{
@@ -88,7 +91,8 @@ body{
 	font: 1.5em sans-serif;
 }
 td{
-	margin: auto;
+	margin-left: auto;
+  margin-right: auto;
 }
 h5{
 	font-size: 50px;
@@ -124,35 +128,36 @@ h5{
 
 							<!-- Banner -->
 							<section>
-										<div class="col-12 col-12-small">
+										<div class="col-12 col-12-small Center">
 										
 																<h4>การซื้อของฉัน</h4>
 															</div>
+															
 															<div class="col-10 col-12-small">
 															<div class="table-wrapper">
 															<div class="w3-container">
 															<?php echo $_SESSION["bill"]; ?>
-																<table class="alt">
+																<table id="example"  class="alt" style="width:100%"  >
 																	<thead>
 																		<tr>
 																			
-																			<th>รูปที่สกรีน</th>
-																			<th>ตรวจสอบสินค้า</th>
-																			<th>ชำระเงิน</th>
-																			<th>ตัวอย่างสินค้า</th>
-																			<th>ราคา</th>
-																			<th>สถานะสินค้า</th>
+																			<th class="text-center">รูปที่สกรีน</th>
+																			<th class="text-center">ตรวจสอบสินค้า</th>
+																			<th class="text-center">ชำระเงิน</th>
+																			<th class="text-center">ตัวอย่างสินค้า</th>
+																			<th class="text-center">ราคา</th>
+																			<th class="text-center">สถานะสินค้า</th>
 																		</tr>
 																	</thead>
 																	<tbody>
 																		
 																		<tr>
-																			<td><a href="checkorder3.php"><img class="modal" src="<?php echo "$logo" ?>" alt="" /></a></td>
-																			<td><a href="checkorder3.php">ตรวจสอบสินค้า</a></td>
+																			<td><a href="checkorder4.php"><img style="width:100px" class="img-fluid" src="<?php echo "$logo" ?>" alt="" /></a></td>
+																			<td><a href="checkorder4.php">ตรวจสอบสินค้า</a></td>
 																			<td><a href="purchase_1.php">ชำระเงิน</a></td>
 																			<td><a href="simple.php">ตัวอย่างสินค้า</a></td>
 																			<td>500</a></td>
-																			<td><ul class="a">
+																			<td class="text-center"><ul class="a">
 																				<li class="b" >
 																					<?php if($status >= 1){ ?>
 																						<i class="d" title="กำลังประเมินราคา">1</i>
@@ -198,7 +203,7 @@ h5{
 																			</ul></a></td>
 																		</tr>
 																		<tr>
-																		<td><a href="checkorder3.php"><img class="modal" src="images/foxx.jpg" alt="" /></a></td>
+																		<td><a href="checkorder3.php"><img style="width:90px" class="img-fluid" src="images/foxx.jpg" alt="" /></a></td>
 																			<td><a href="checkorder3.php">ตรวจสอบสินค้า</a></td>
 																			<td><a href="purchase_1.php">ชำระเงิน</a></td>
 																			<td><a href="simple.php">ตัวอย่างสินค้า</a></td>
@@ -225,7 +230,7 @@ h5{
 																			</ul></td>
 																		</tr>
 																		<tr>
-																		<td><a href="checkorder_1.php"><img class="modal" src="images/logo-design-nepal.png" alt="" /></a></td>
+																		<td><a href="checkorder_1.php"><img style="width:90px" class="img-fluid" src="images/logo-design-nepal.png" alt="" /></a></td>
 																			<td><a href="checkorder_1.php">ตรวจสอบสินค้า</a></td>
 																			<td><a href="purchase_1.php">ชำระเงิน</a></td>
 																			<td><a href="simple.php">ตัวอย่างสินค้า</a></td>
@@ -254,17 +259,19 @@ h5{
 																	</tbody>
 																	
 																</table>
-																<p>1 กำลังประเมินราคา</p>
+																
+
+															</div>
+															
+															</div>
+
+								</section>
+								<p>1 กำลังประเมินราคา</p>
 																<p>2 รอชำระเงินมัดจำ/เต็มจำนวน</p>
 																<p>3 รอการชำระเงินส่วนที่เหลือ</p>
 																<p>4 กำลังผลิต</p>
 																<p>5 กำลังจัดส่งสินค้า</p>
 																<p>6 จัดส่งสินค้าสำเร็จ</p>
-
-															</div>
-															</div>
-
-								</section>
 						</div>
 					</div>
 
@@ -368,7 +375,29 @@ h5{
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js" defer></script>
+			<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+			<script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+			<script src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 			
+			<script>
+    $(document).ready(function () {
+        $('#example').DataTable({
+			"columns": [
+        { "width": "10%" },
+        { "width": "15%" },
+        { "width": "10%" },
+        { "width": "15%" },
+        { "width": "10%" },
+        { "width": "100%" },
+         
+],
+		}
+			
+			
+		);
+		
+    });
+    </script>
 			
 			
 	</body>

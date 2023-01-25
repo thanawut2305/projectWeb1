@@ -252,24 +252,14 @@ function slider5(){
 																				<td><input type="number" id="demo-name" name="top[]" min="1" value="" /></td>
 																				<td><input type="number" id="demo-name" name="top[]" min="1" value="" /></td>
 																			</tr>
-																			<tr>
-																				<td>ระยะห่างของลายแบบกับขอบด้านล่าง</td>
-																				<td><input type="number" id="demo-name" name="button[]" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="button[]" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="button[]" min="1" value="" /></td>
-																			</tr>
+																			 
 																			<tr>
 																				<td>ระยะห่างของลายแบบกับขอบด้านซ้าย</td>
 																				<td><input type="number" id="demo-name" name="left[]" min="1" value="" /></td>
 																				<td><input type="number" id="demo-name" name="left[]" min="1" value="" /></td>
 																				<td><input type="number" id="demo-name" name="left[]" min="1" value="" /></td>
 																			</tr>
-																			<tr>
-																				<td>ระยะห่างของลายแบบกับขอบด้านขวา</td>
-																				<td><input type="number" id="demo-name" name="right[]" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="right[]" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="right[]" min="1" value="" /></td>
-																			</tr>
+																			 
 																			
 																			
 																		</tbody>
