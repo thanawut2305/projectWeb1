@@ -8,47 +8,37 @@
 	<head>
 	<?php
 		@ini_set('display_errors', '0');
-		$asd = serialize($_POST['demo-priority']);
-		if($_FILES){
-			session_start(); 
-			$logo = $_FILES['logofile'];
-			$dir = "images/";
-			$logo = $dir . basename($_FILES['logofile']['name']);
-			move_uploaded_file($_FILES['logofile']['tmp_name'],$logo);
-			$_SESSION["screenPicture"]=$logo;
-		}
+		session_start();
+		 
 		if($_POST){
-			$option = explode(",", $_POST['demo-priority1']);
-			$color = $option[0];
-			$color_name = $option[1];
-			$size = $_POST['demo-priority'];
 			$quantity = $_POST['quantity'];
 			$colorRGB = $_POST['colorRGB'];
-			$w = $_POST['points1'];
-			$s = $_POST['points2'];
-			$a = $_POST['points3'];
-			$d = $_POST['points4'];
+			$w = $_POST['top'];
+			$s = $_POST['button'];
+			$a = $_POST['left'];
+			$d = $_POST['right'];
 			$wide = $_POST['wide'];
 			$long = $_POST['long'];
-			$number = $_POST['number'];
-			$price = $quantity*10;
+			$sum = 0;
+			for($i=0;$i<3;$i++){
+			$price[$i] = $quantity[$i]*10;
 			if($wide>=8.3&&$wide<11.7){
 				if($long>=11.7&&$long<16.5){
-					$price = 150+$price;
+					$price[$i] = 150+$price[$i];
 				}
 			}elseif($wide>=11.7&&$wide<16.5){
 				if($long>=16.5&&$long<23.4){
-					$price = 250+$price;
+					$price[$i] = 250+$price[$i];
 				}
 			}else{
-					$price = 350+$price;
+					$price[$i] = 350+$price[$i];
 			}
-			$deposit = $price*40/100;
-			$_SESSION["color"]=$color;
-			$_SESSION["color_name"]=$color_name;
+			$deposit[$i] = $price[$i]*40/100;
+			$sum = $sum+$price[$i];
+		}
 			$_SESSION["quantity"]=$quantity;
-			$_SESSION["size"]=$size;
-			$_SESSION["number"]=$number;
+			$_SESSION["sum"]=$sum;
+			
 			$_SESSION["colorRGB"]=$colorRGB;
 			$_SESSION["price"]=$price;
 			$_SESSION["deposit"]=$deposit;
@@ -64,7 +54,7 @@
 			$_SESSION["phone"]="123-456789";
 			$_SESSION["start"]="1";
 		}
-		
+		 
 		?>
 		<title>Order | silk_screen</title>
 		<meta charset="utf-8" />
@@ -184,55 +174,60 @@ function slider5(){
 									<!-- <a href="index.html" class="logo"><strong>ยินดีต้อนรับ</strong> by HTML5 UP</a> -->
 									<p>ยินดีต้อนรับ คุณ admin</p>
 									<ul class="icons">
-										<?php echo $asd; ?>
+										
 										<li><a href="profile.html" class="logo">แก้ไขข้อมูลส่วนตัว</a></li>
 										<li><a href="index.html" class="logo">logout</a></li>
 									</ul>
 									<!-- <i class="fa fa-user-circle" aria-hidden="true"></i> -->
 								</header>
 							
-									<form method="post" action="checkorder3.php" enctype="multipart/form-data">
+									<form method="post" action="purchase_1.php" enctype="multipart/form-data">
 							<!-- Content -->
 								<section>
-									<!-- <header class="main">
-										<h1>สั่งสกรีน</h1>
-									</header> -->
+									<header class="main">
+										<h2>ทำการสั่งซื้อ</h2>
+									</header>
 
 									<div class="row gtr-200">
 										<div class="col-6 col-12-medium">
 											<div id="boxCenter">
 												<div class="displayShirt">												
 													<p><strong>ภาพที่จะใช้สกรีน</strong></p>
-													<div class="img-resize"><span><img src="<?php echo $_SESSION["screenPicture"]; ?>" alt="" /></span></div>
+													<div class="img-resize"><span><img src="<?php echo $_SESSION["screenPicture"]; ?>"  alt="" /></span></div>
 												</div>
 											</div>	
 										</div>
 
-									<div class="col-6 col-12-medium">
-										<div id="boxCenter">		
-											<div class="displayShirt">
-												<p><strong>เสื้อยืดที่เลือก</strong></p>
-													<div class="img-resize"><span><img src="<?php echo $_SESSION["color"]; ?>" alt="" /></span></div><br>
-											</div>
-										</div>			
+                                        <div class="col-6 col-12-medium">
+                                            <div id="boxCenter">		
+                                                <div class="displayShirt">
+                                                    <p><strong>เสื้อยืดที่เลือก</strong></p>
+                                                        <div class="img-resize"><span><img src="<?php echo $_SESSION["color"]; ?>"  alt="" /></span></div><br>
+                                                </div>
+                                            </div>			
+                                        </div>
 									</div>
-										
+
+
 										<div class="col-12 col-12-medium">
 											<!-- <h3>Form</h3> -->
-
-													
+                                            
+                            	
+                                            <div class="box2"></div>
 														<div class="row gtr-uniform">
 
 															<!-- <div class="col-12 col-12-small">
 																<h4>ตารางขนาดของเสื้อยืด</h4>
 															</div> -->
+
+                                                            
 															<div class="col-10 col-12-small">
 																<div class="table-wrapper">
 																	<table class="alt">
 																		
 																		<tbody>
 																			<tr>
-																				<td>ขนาด<br>(Size)</td>
+																				<td>ขนาด(Size)</td>
 																				<td>s</td>
 																				<td>m</td>
 																				<td>l</td>
@@ -240,72 +235,92 @@ function slider5(){
 																		
 																			<tr>
 																				<td>จำนวน(ตัว)</td>
-																				<td><input type="number" id="demo-name" name="quantity[]" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="quantity[]" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="quantity[]" min="1" value="" /></td>
+																				<td><?php echo $_SESSION["quantity"][0]; ?></td>
+																				<td><?php echo $_SESSION["quantity"][1]; ?></td>
+																				<td><?php echo $_SESSION["quantity"][2]; ?></td>
 																			</tr>
 																			
 																				
 																			<tr>
 																				<td>ระยะห่างของลายแบบกับขอบด้านบน(นิ้ว)</td>
-																				<td><input type="number" id="demo-name" name="top[]" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="top[]" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="top[]" min="1" value="" /></td>
+																				<td><?php echo $_SESSION["w"][0]; ?></td>
+																				<td><?php echo $_SESSION["w"][1]; ?></td>
+																				<td><?php echo $_SESSION["w"][2]; ?></td>
 																			</tr>
-																			 
+																			<tr>
+																				<td>ระยะห่างของลายแบบกับขอบด้านล่าง(นิ้ว)</td>
+																				<td><?php echo $_SESSION["s"][0]; ?></td>
+																				<td><?php echo $_SESSION["s"][1]; ?></td>
+																				<td><?php echo $_SESSION["s"][2]; ?></td>
+																			</tr>
 																			<tr>
 																				<td>ระยะห่างของลายแบบกับขอบด้านซ้าย(นิ้ว)</td>
-																				<td><input type="number" id="demo-name" name="left[]" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="left[]" min="1" value="" /></td>
-																				<td><input type="number" id="demo-name" name="left[]" min="1" value="" /></td>
+																				<td><?php echo $_SESSION["a"][0]; ?></td>
+																				<td><?php echo $_SESSION["a"][1]; ?></td>
+																				<td><?php echo $_SESSION["a"][2]; ?></td>
 																			</tr>
-																			 
+																			<tr>
+																				<td>ระยะห่างของลายแบบกับขอบด้านขวา(นิ้ว)</td>
+																				<td><?php echo $_SESSION["d"][0]; ?></td>
+																				<td><?php echo $_SESSION["d"][1]; ?></td>
+																				<td><?php echo $_SESSION["d"][2]; ?></td>
+																			</tr>
+																			<tr>
+																				<td>ราคาต่อหน่วย(บาท)</td>
+																				<td><?php echo $_SESSION["deposit"][0]; ?></td>
+																				<td><?php echo $_SESSION["deposit"][1]; ?></td>
+																				<td><?php echo $_SESSION["deposit"][2]; ?></td>
+																			</tr>
+																			<tr>
+																				<td>ราคารวม(บาท)</td>
+																				<!-- <td><?php echo $_SESSION["price"][0]; ?></td>
+																				<td><?php echo $_SESSION["price"][1]; ?></td>
+																				<td><?php echo $_SESSION["price"][2]; ?></td> -->
+																				<td>อยู่ในระหว่างการประเมินราคา</td>
+																				<td>อยู่ในระหว่างการประเมินราคา</td>
+																				<td>อยู่ในระหว่างการประเมินราคา</td>
+																				
+																				
+																				
+																			</tr>
+																			<tr>
+																				<td colspan="3">ราคาสุทธิ(บาท)</td>
+                                                                                <td>อยู่ในระหว่างการประเมินราคา</td>
+																				<!-- <td><?php echo $_SESSION["sum"]; ?></td> -->
+																				
+																			</tr>
 																			
 																			
 																		</tbody>
-																		<tfoot>
-																			<tr>
-																				<td>ขนาดภาพกว้าง(นิ้ว)</td>	
-																				<td><input type="number" id="demo-name" name="wide" min="1" value="" /></td>						
-																			</tr>
-																			<tr>
-																				<td>ขนาดภาพยาว(นิ้ว)</td>
-																				<td><input type="number" id="demo-name" name="long" min="1" value="" /></td>
-																			</tr>
-																		</tfoot>
 																	
 																	</table>
-																	<!-- เอามาไว้ตรงนี้เพราะ ต้องเลือกสี 2 อย่าง ถ้าเลือกเป็นสีเดียวจะขึ้นให้เลือก ถ้า 2 สีจะไม่ขึ้นให้เลือก -->
-																	<div class="col-6 col-12-xsmall">
-																		<h3 id="content">สีที่จะใช้สกรีน</h3>
-																	</div>
-																	<div class="row gtr-uniform">
-																		<div class="col-4 col-2-xsmall">
-																			<div id="box"></div>
-																		</div>
-																		<div class="col-2 col-2-xsmall">
-																			<input type="color" id="colorInputColor" name="colorRGB">
-																		</div>
-																		<div class="col-4 col-12-xsmall">
-																			<input type="button" id="colorButton" value="เลือกใช้" onclick="changeColor()">
-																		</div>
-																		<div class="col-6 col-12-xsmall">
-																			<input type="hidden" id="colorInputText">
-																		</div>
-																	</div>
 																</div>
+
+                                                                <div class="col-6 col-12-medium">
+
+                                                                    <form class="box2" style="background-color: rgb(179, 171, 171);">
+                                                                        
+                                                                        <!-- <input type="text" id="addr" name="addr" value="12 nowhere"><br> -->
+                                                                        <label for="fname">ขนาดภาพกว้าง(นิ้ว): <?php echo $_SESSION["wide"]; ?></label>
+                                                                        <label for="fname">ขนาดภาพยาว(นิ้ว): <?php echo $_SESSION["long"]; ?></label>
+                                                                        
+                                                                         
+                                                                        <!-- <a href="purchase.html" class="button secondary">ชำระเงินคงเหลือ</a> -->
+                                                                        
+                                                                    </form>
+                                                                </div> 
+
+                                                                
+
+
 															</div>
-															
-															
-															
-															
 															
 															
 															<div class="col-12 col-12-small">
 																<input type="button" class="button primary" value="ยกเลิก"></input>
 																
-																<button type="submit" class="button secondary" name="action" value="check">ยืนยันการสั่ง</button>
-																
+																<button type="submit" class="button secondary" name="action" value="check">ชำระเงิน</button>
+																<!-- <a href="checkorder3.html">ดำเนินการสั่งทำ</a> -->
 																
 															</div>
 

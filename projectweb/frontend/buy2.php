@@ -276,22 +276,7 @@ function slider5(){
 																	
 																	</table>
 																	<!-- เอามาไว้ตรงนี้เพราะ ต้องเลือกสี 2 อย่าง ถ้าเลือกเป็นสีเดียวจะขึ้นให้เลือก ถ้า 2 สีจะไม่ขึ้นให้เลือก -->
-																	<div class="col-6 col-12-xsmall">
-																		<h3 id="content">สีที่จะใช้สกรีน</h3>
-																	</div>
-																	<div class="row gtr-uniform">
-																		<div class="col-4 col-2-xsmall">
-																			<div id="box"></div>
-																		</div>
-																		<div class="col-2 col-2-xsmall">
-																			<input type="color" id="colorInputColor" name="colorRGB">
-																		</div>
-																		<div class="col-4 col-12-xsmall">
-																			<input type="button" id="colorButton" value="เลือกใช้" onclick="changeColor()">
-																		</div>
-																		<div class="col-6 col-12-xsmall">
-																			<input type="hidden" id="colorInputText">
-																		</div>
+																	
 																	</div>
 																</div>
 															</div>
