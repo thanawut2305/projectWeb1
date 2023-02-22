@@ -73,8 +73,9 @@ body{
 	height: 40px;
 	color: black;
 	border-radius: 50%;
-	padding-top: 9px;
-	padding-right: 1px;
+	padding: 4px;
+	/* padding-top: 9px;
+	padding-right: 1px; */
 	 
 	font: 1.5em sans-serif;
 }
@@ -85,8 +86,9 @@ body{
 	height: 40px;
 	color: white;
 	border-radius: 50%;
-	padding-top: 9px;
-	padding-right: 1px;
+	padding: 4px;
+	/* padding-top: 9px;
+	padding-right: 1px; */
 	 
 	font: 1.5em sans-serif;
 }
@@ -104,16 +106,14 @@ h5{
 /* The Close Button */
 
 
-</style>
-
-<style>
 .tooltip {
-  position: relative;
-  display: inline-block;
+	/* position: relative;
+	display: inline-block;
+	border-bottom: 1px dotted black; */
   
 }
 
-.tooltip .tooltiptext {
+/* .tooltip .tooltiptext {
   visibility: hidden;
   width: 120px;
   background-color: black;
@@ -139,7 +139,7 @@ h5{
 }
 .tooltip:hover .tooltiptext {
   visibility: visible;
-}
+} */
 </style>
 
 	</head>
@@ -183,10 +183,11 @@ h5{
 																			<th class="text-center">ตัวอย่างสินค้า</th>
 																			<th class="text-center">ราคา</th>
 																			<th class="text-center">สถานะสินค้า 
-																				<!-- <div class="tooltip"> -->
-																					<i class='fas fa-info-circle' style='font-size:15px'></i>
-																				<!-- <span class="tooltiptext">111111</span> -->
-																				<!-- </div> -->
+																				
+																				<div class="tooltip">
+																				<i class='fas fa-info-circle' style='font-size:15px'></i>
+																				<span class="tooltiptext">111111</span></div>
+																				
 																			</th>
 																		</tr>
 																	</thead>
@@ -307,6 +308,10 @@ h5{
 															</div>
 
 								</section>
+								<div class="tooltip">
+									<!-- <i class='fas fa-info-circle' style='font-size:15px'></i> -->
+								<!-- <span class="tooltiptext">111111</span> -->
+								</div>
 								<p>1 กำลังประเมินราคา</p>
 																<p>2 รอชำระเงินมัดจำ/เต็มจำนวน</p>
 																<p>3 รอการชำระเงินส่วนที่เหลือ</p>

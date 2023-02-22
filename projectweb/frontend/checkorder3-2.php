@@ -233,14 +233,8 @@ function slider5(){
 																				<td>l</td>
 																			</tr>
 																		
-																			<tr>
-																				<td>จำนวน(ตัว)</td>
-																				<td><?php echo $_SESSION["quantity"][0]; ?></td>
-																				<td><?php echo $_SESSION["quantity"][1]; ?></td>
-																				<td><?php echo $_SESSION["quantity"][2]; ?></td>
-																			</tr>
 																			
-																				
+																			
 																			<tr>
 																				<td>ระยะห่างของลายแบบกับขอบด้านบน(นิ้ว)</td>
 																				<td><?php echo $_SESSION["w"][0]; ?></td>
@@ -264,6 +258,12 @@ function slider5(){
 																				<td><?php echo $_SESSION["d"][0]; ?></td>
 																				<td><?php echo $_SESSION["d"][1]; ?></td>
 																				<td><?php echo $_SESSION["d"][2]; ?></td>
+																			</tr>
+																			<tr>
+																				<td>จำนวน(ตัว)</td>
+																				<td><?php echo $_SESSION["quantity"][0]; ?></td>
+																				<td><?php echo $_SESSION["quantity"][1]; ?></td>
+																				<td><?php echo $_SESSION["quantity"][2]; ?></td>
 																			</tr>
 																			<tr>
 																				<td>ราคาต่อหน่วย(บาท)</td>
